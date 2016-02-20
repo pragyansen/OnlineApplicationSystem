@@ -1,0 +1,42 @@
+@CHARSET "ISO-8859-1";
+
+.noPadding{
+	padding: 0px;
+}
+
+.noMargin{
+	margin: 0px;
+}
+
+a, a:hover{
+	text-decoration: none;
+	color: inherit;
+}
+
+.mainContainer{
+	
+}
+
+.header{
+	color: Black;
+	font-size: 30px;
+	min-height: 75px;
+	background-color: #3385ff;
+	padding-top: 15px;
+	padding-left: 20px;
+}
+
+.loginMdl{
+	margin-top: 50px;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: #b3ffd9;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.loginMdlMsg{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
