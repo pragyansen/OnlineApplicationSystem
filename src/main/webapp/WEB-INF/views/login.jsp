@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<html ng-app="loginApp">
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<html>
   <head>
     <jsp:include page="/WEB-INF/views/commons/csslinks.jsp" />
-    <jsp:include page="/WEB-INF/views/commons/jslinks.jsp" />
+    
 </head>
   <body onload='document.loginForm.username.focus();'>
   <div class="col-xs-12 noMargin noPadding" ng-controller="loginControler">
@@ -15,8 +15,8 @@
   			<spring:message code="login.appname.second"/>
   		</a>
   	</div>
-  	<div class="col-xs-12 noPadding"  ng-show="signInFlag">
-  		<div class="col-md-6 col-md-offset-3 loginMdl">
+  	<div class="col-xs-12 noPadding">
+  		<div class="col-md-6 col-md-offset-3 col-lg-3 col-lg-offset-8 loginMdl">
         <p class="loginMdlMsg"><spring:message code="login.msg"/></p>
         
         <c:if test="${not empty error}">
@@ -55,49 +55,16 @@
               <button type="submit" class="btn btn-primary btn-block btn-flat"><spring:message code="login.button.msg"/></button>
             </div>
             <div class="col-md-12">
-              <button type="button" class="btn btn-success btn-block btn-flat" ng-click="showSignUpMdl()">Sign up if you are a new user</button>
+              <a type="button" class="btn btn-success btn-block btn-flat" href="<c:url value='register' />">Sign up if you are a new user</a>
             </div>
           </div>
         </form>	
 		
   		</div>
   	</div>
-  	<div class="col-xs-12 noPadding"  ng-show="!signInFlag">
-  		<div class="col-md-8 col-md-offset-2 loginMdl">
-  			<p class="loginMdlMsg"><spring:message code="signup.msg"/></p>
-				<form class="form-horizontal" role="form">
-					<div class="form-group">
-						<label class="control-label col-md-2 noPadding">Email:</label>
-						<div class="col-md-10">
-							<input type="email" class="form-control" name="email"	placeholder="Enter email">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-2 noPadding">Name:</label>
-						<div class="col-md-10">
-							<input type="text" class="form-control" name="name"	placeholder="Enter Name">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-2 noPadding">Mobile:</label>
-						<div class="col-md-10">
-							<input type="text" class="form-control" name="mobile"	placeholder="Enter Mobile No.">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-md-offset-2 col-md-3">
-							<button type="submit" class="btn btn-success">Submit</button>
-						</div>
-						<div class="col-md-offset-2 col-md-3">
-							<button type="submit" class="btn btn-success" ng-click="showSignIn()">Already Register</button>
-						</div>
-					</div>
-				</form>
-
-			</div>
-  	</div>
+  	
   </div>
   
-	
+	<jsp:include page="/WEB-INF/views/commons/jslinks.jsp" />
   </body>
 </html>

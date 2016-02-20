@@ -1,19 +1,22 @@
 package com.onlineapplication.mvc.bean;
 
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-
-import com.onlineapplication.mvc.convert.MaskFormat;
 
 public class RegisterBean {
 
 	@Email
+	@NotEmpty
+	@Size(min=2, max=30)
 	private String email;
 	
 	@NotEmpty
+	@Size(min=2, max=30)
 	private String name;
 	
-	@MaskFormat("##########")
+	@NotEmpty
 	private String phone;
 
 	public String getEmail() {
