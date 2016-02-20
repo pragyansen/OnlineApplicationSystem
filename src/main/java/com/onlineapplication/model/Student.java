@@ -1,7 +1,12 @@
-package com.onlineapplication.mvc.bean;
+package com.onlineapplication.model;
 
-public class RegisterBean {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Student {
+
+	@Id
 	private String email;
 	
 	private String name;
@@ -31,5 +36,4 @@ public class RegisterBean {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
 }
