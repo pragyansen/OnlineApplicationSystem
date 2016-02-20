@@ -7,16 +7,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class RegisterBean {
 
-	@Email
-	@NotEmpty
-	@Size(min=2, max=30)
 	private String email;
 	
-	@NotEmpty
-	@Size(min=2, max=30)
 	private String name;
 	
-	@NotEmpty
 	private String phone;
 
 	public String getEmail() {

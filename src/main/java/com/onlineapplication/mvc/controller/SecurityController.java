@@ -1,5 +1,6 @@
 package com.onlineapplication.mvc.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import com.onlineapplication.mvc.validator.RegisterBeanValidator;
 
 
 @Controller
-@SessionAttributes("registerBean")
+
 public class SecurityController {
 	
 	@Autowired
@@ -54,7 +55,7 @@ public class SecurityController {
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String processRegister(@Valid RegisterBean registerBean, BindingResult result,
-			Model model, RedirectAttributes redirectAttrs){
+			Model model, HttpSession session){
 		System.err.println("I am called");
 		registerBeanValidator.validate(registerBean, result);
 		System.err.println(registerBean.getEmail());
@@ -64,7 +65,7 @@ public class SecurityController {
 			return null;
 		}
 		String message = "Registration Success";
-		
+		session.removeAttribute("registerBean");
 		model.addAttribute("msg", message);
 		return "login";
 		
