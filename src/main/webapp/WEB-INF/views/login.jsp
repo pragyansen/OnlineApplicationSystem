@@ -7,7 +7,7 @@
     <link href="resources/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
 </head>
   <body onload='document.loginForm.username.focus();'>
-  <div class="col-xs-12 noMargin noPadding" ng-controller="loginControler">
+  <div class="col-xs-12 noMargin noPadding">
   	<div class="col-xs-12 header">
   		<a href="resources/index2.html" class="customanchor">
   			<span class="glyphicon glyphicon-education" aria-hidden="true"></span>
@@ -51,11 +51,22 @@
                 
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 form-group">
               <button type="submit" class="btn btn-primary btn-block btn-flat"><spring:message code="login.button.msg"/></button>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 form-group">
               <a type="button" class="btn btn-success btn-block btn-flat" href="<c:url value='register' />">Sign up if you are a new user</a>
+            </div>
+            <div class="col-md-12 form-group">
+              <button type="button" class="btn btn-danger btn-block btn-flat" id="forgrtPassBtn">Frogot Password ? </button>
+            </div>
+            <div class="col-md-12 noPadding" id="forgrtPassDiv">
+	        <div class="col-md-12 form-group">
+	            <input type="text" class="form-control" placeholder="Enter email or mobile no."/>
+          	</div>
+          	<div class="col-md-6 form-group">
+              <button type="button" class="btn btn-danger btn-block btn-flat" id="forgrtPassBtn">Submit</button>
+            </div>
             </div>
           </div>
         </form>	

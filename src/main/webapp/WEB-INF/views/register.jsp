@@ -22,10 +22,6 @@
   			<p class="loginMdlMsg"><spring:message code="signup.msg"/></p>
   			       
 				<form:form class="form-horizontal" role="form" method="post" id="form" modelAttribute="registerBean">
-						<c:set var="nameHasBindError">
-							<form:errors path="name"/>
-						</c:set>
-					
 					 <c:if test="${not empty error}">
 						<div class="alert alert-danger">
 							<span class="glyphicon glyphicon-exclamation-sign row-lg-10" aria-hidden="true"> Please correct below errors</span>
