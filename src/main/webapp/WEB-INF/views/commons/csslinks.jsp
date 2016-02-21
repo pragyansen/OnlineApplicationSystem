@@ -6,4 +6,3 @@
 	<!-- Bootstrap 3.3.2 -->
 	<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
-</style>

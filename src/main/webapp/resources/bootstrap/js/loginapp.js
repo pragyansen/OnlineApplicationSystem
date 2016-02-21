@@ -1,4 +1,4 @@
-
+/*
 var loginApp = angular.module('loginApp', []);
 
 loginApp.controller('loginControler', function($scope) {
@@ -14,4 +14,11 @@ loginApp.controller('loginControler', function($scope) {
     };
     
 });
+*/
 
+$(document).ready(function(){
+	$("#forgrtPassDiv").hide();
+});
+$("#forgrtPassBtn").click(function(){
+	$("#forgrtPassDiv").toggle(500);
+} );
