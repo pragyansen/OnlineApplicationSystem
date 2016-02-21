@@ -7,7 +7,7 @@
     <link href="resources/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
 </head>
   <body onload='document.loginForm.username.focus();'>
-  <div class="col-xs-12 noMargin noPadding" ng-controller="loginControler">
+  <div class="col-xs-12 noMargin noPadding">
   	<div class="col-xs-12 header">
   		<a href="resources/index2.html" class="customanchor">
   			<span class="glyphicon glyphicon-education" aria-hidden="true"></span>
