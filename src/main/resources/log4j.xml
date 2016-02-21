@@ -10,28 +10,35 @@
 		</layout>
 	</appender>
 	
-	<logger name="org.springframework.samples">
+	<appender name="file" class="org.apache.log4j.FileAppender">
+       <param name="File" value="D:/Logs/SpringMVC2.log" />
+       <layout class="org.apache.log4j.PatternLayout">
+          <param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n"/>
+       </layout>
+    </appender>
+    
+	<logger name="com.onlineapplication">
 		<level value="debug" />
 	</logger>
 	
 	<logger name="org.springframework.core">
-		<level value="info" />
+		<level value="error" />
 	</logger>
 	
 	<logger name="org.springframework.beans">
-		<level value="info" />
+		<level value="error" />
 	</logger>
 	
 	<logger name="org.springframework.context">
-		<level value="info" />
+		<level value="error" />
 	</logger>
 
 	<logger name="org.springframework.http">
-		<level value="debug" />
+		<level value="error" />
 	</logger>
 
 	<logger name="org.springframework.web">
-		<level value="debug" />
+		<level value="error" />
 	</logger>
 
 	<root>

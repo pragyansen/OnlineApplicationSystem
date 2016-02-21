@@ -3,6 +3,7 @@ package com.onlineapplication.mvc.controller;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +28,8 @@ public class SecurityController {
 	
 	@Autowired
 	StudentService studentService;
+	
+	private static final Logger logger = Logger.getLogger(SecurityController.class);
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(
@@ -56,14 +59,15 @@ public class SecurityController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String processRegister(@Valid RegisterBean registerBean, BindingResult result,
 			Model model, HttpSession session){
+		logger.debug("LOG Success");
+		
 		registerBeanValidator.validate(registerBean, result);
 		
 		if (result.hasErrors()) {
 			model.addAttribute("error", "error");
 			return null;
 		}
-		String message = "Registration Success";
-		session.removeAttribute("registerBean");
+		String message = "Registration Success, please check email for password";
 		model.addAttribute("msg", message);
 		
 		studentService.saveNewStudent(registerBean);
