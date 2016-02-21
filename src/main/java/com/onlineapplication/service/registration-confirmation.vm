@@ -1,0 +1,11 @@
+
+<html>
+<body>
+<h3>Hi ${student.name}, Your registration successful</h3>
+
+<div>
+   Your password is ${student.password}.
+</div>
+</body>
+
+</html>
