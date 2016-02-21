@@ -13,21 +13,16 @@ public class StudentService {
 	@Autowired
 	StudentDao studentDao;
 	
-	public boolean saveNewStudent(RegisterBean registerBean){
+	public Student saveNewStudent(RegisterBean registerBean){
 		try{
 			Student student = new Student();
 			student.setName(registerBean.getName());
 			student.setEmail(registerBean.getEmail());
 			student.setPhone(registerBean.getEmail());
-			
-			
 			studentDao.persist(student);
-			return true;
+			return student;
 		}catch(Exception e){
-			return false;
+			return null;
 		}
-		
-		
-		
 	}
 }

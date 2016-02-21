@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.onlineapplication.model.Student;
 import com.onlineapplication.mvc.bean.RegisterBean;
 import com.onlineapplication.mvc.validator.RegisterBeanValidator;
+import com.onlineapplication.service.MailService;
 import com.onlineapplication.service.StudentService;
-
 
 
 @Controller
@@ -28,6 +29,9 @@ public class SecurityController {
 	
 	@Autowired
 	StudentService studentService;
+	
+	@Autowired
+	MailService mailService;
 	
 	private static final Logger logger = Logger.getLogger(SecurityController.class);
 	
@@ -70,7 +74,10 @@ public class SecurityController {
 		String message = "Registration Success, please check email for password";
 		model.addAttribute("msg", message);
 		
-		studentService.saveNewStudent(registerBean);
+		Student student = studentService.saveNewStudent(registerBean);
+		
+		if(null != student)
+			mailService.sendMail(student);
 		
 		return "login";
 		

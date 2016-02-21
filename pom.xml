@@ -311,6 +311,12 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- Java Mail Capability -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.5</version>
+		</dependency>
 
 	</dependencies>
 	<repositories>

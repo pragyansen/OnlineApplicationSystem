@@ -67,10 +67,24 @@
 
 <!-- 	<bean class="com.onlineapplication.config.SessionConfig"/> -->
 	
+	
+	<!-- Spring Security Session Management via Redis -->
 	<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
-
-	<!--2-->
 	<bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"/>
 	
+	<!-- Spring mail Configuration -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="pragyan.sen" />
+		<property name="password" value="ndoorzkqsmdkxzmx" />
+			
+		<property name="javaMailProperties">
+		   <props>
+	       	      <prop key="mail.smtp.auth">true</prop>
+	       	      <prop key="mail.smtp.starttls.enable">true</prop>
+	       	   </props>
+		</property>
+	</bean>
 	
 </beans>
