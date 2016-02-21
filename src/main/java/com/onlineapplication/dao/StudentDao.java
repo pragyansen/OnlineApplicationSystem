@@ -19,4 +19,9 @@ public class StudentDao {
         this.entityManager.persist(student);
     }
 	
+	public Student findCustomer(String email) {
+        if (email == null) return null;
+        return entityManager.find(Student.class, email);
+    }
+	
 }

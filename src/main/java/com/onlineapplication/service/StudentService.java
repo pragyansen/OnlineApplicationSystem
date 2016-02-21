@@ -13,16 +13,25 @@ public class StudentService {
 	@Autowired
 	StudentDao studentDao;
 	
+	@Autowired
+	PasswordGenerator passwordGenerator;
+	
 	public Student saveNewStudent(RegisterBean registerBean){
 		try{
 			Student student = new Student();
 			student.setName(registerBean.getName());
-			student.setEmail(registerBean.getEmail());
-			student.setPhone(registerBean.getEmail());
+			student.setEmail(registerBean.getEmail().toLowerCase());
+			student.setPhone(registerBean.getPhone());
+			student.setPassword(passwordGenerator.randomString(8));
+			student.setRole("ROLE_USER");
 			studentDao.persist(student);
 			return student;
 		}catch(Exception e){
 			return null;
 		}
+	}
+
+	public Student fetchStudentByEmail(String email) {
+		return studentDao.findCustomer(email);
 	}
 }

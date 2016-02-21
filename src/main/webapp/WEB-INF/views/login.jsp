@@ -4,7 +4,7 @@
 <html>
   <head>
     <jsp:include page="/WEB-INF/views/commons/csslinks.jsp" />
-    
+    <link href="resources/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
 </head>
   <body onload='document.loginForm.username.focus();'>
   <div class="col-xs-12 noMargin noPadding" ng-controller="loginControler">
@@ -36,7 +36,7 @@
            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="<spring:message code="login.input.user"/>" name="username">
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" placeholder="<spring:message code="login.input.pass"/>" name="password">
@@ -66,5 +66,15 @@
   </div>
   
 	<jsp:include page="/WEB-INF/views/commons/jslinks.jsp" />
+	<script	src="resources/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+	    <script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
+      });
+    </script>
   </body>
 </html>

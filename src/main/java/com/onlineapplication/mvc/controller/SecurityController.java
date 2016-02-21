@@ -71,7 +71,7 @@ public class SecurityController {
 			model.addAttribute("error", "error");
 			return null;
 		}
-		String message = "Registration Success, please check email for password";
+		String message = "Registration Success, please check mail inbox for password";
 		model.addAttribute("msg", message);
 		
 		Student student = studentService.saveNewStudent(registerBean);
