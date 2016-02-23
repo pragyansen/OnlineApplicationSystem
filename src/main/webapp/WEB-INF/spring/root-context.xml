@@ -68,11 +68,11 @@
 
 
 	<!-- Spring Security Session Management via Redis -->
-	<bean
+<!-- 	<bean
 		class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration" />
 	<bean
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" />
-
+ -->
 	<!-- Spring mail Configuration -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
