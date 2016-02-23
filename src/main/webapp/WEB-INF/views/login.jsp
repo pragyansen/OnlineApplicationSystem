@@ -58,7 +58,7 @@
               <a type="button" class="btn btn-success btn-block btn-flat" href="<c:url value='register' />">Sign up if you are a new user</a>
             </div>
             <div class="col-md-12 form-group">
-              <button type="button" class="btn btn-danger btn-block btn-flat" id="forgrtPassBtn">Frogot Password ? </button>
+              <button type="button" class="btn btn-danger btn-block btn-flat" id="forgrtPassBtn">Forgot Password ? </button>
             </div>
             <div class="col-md-12 noPadding" id="forgrtPassDiv">
 	        <div class="col-md-12 form-group">

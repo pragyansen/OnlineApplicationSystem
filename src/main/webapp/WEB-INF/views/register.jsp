@@ -70,12 +70,18 @@
 							<form:errors path="phone" class="alert-danger"/>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-md-offset-2 col-md-3">
-							<button type="submit" class="btn btn-primary">Submit</button>
+					<div class="row form-group">
+						<div class="col-md-2">
 						</div>
-						<div class="col-md-offset-2 col-md-3 col-lg-4 col-lg-offset-1">
-							<a class="btn btn-success" href="<c:url value='login'/>">Already Registerd? Click here</a>
+						<div class="col-md-10">
+							<button type="submit" class="btn btn-primary btn-block">Submit</button>
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-10">
+							<a class="btn btn-success btn-block" href="<c:url value='login'/>">Already Registered? Click here</a>
 						</div>
 					</div>
 				</form:form>
