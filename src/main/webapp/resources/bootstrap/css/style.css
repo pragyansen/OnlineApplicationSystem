@@ -18,19 +18,19 @@ a, a:hover{
 }
 
 .header{
-	color: Black;
+	color: White;
 	font-size: 30px;
 	min-height: 75px;
-	background-color: #3385ff;
+	background-color: #0070BA;
 	padding-top: 15px;
 	padding-left: 20px;
 }
 
 .loginMdl{
 	margin-top: 50px;
-	border: 2px solid black;
-	border-radius: 5px;
-	background-color: #b3ffd9;
+	border: 2px solid white;
+	border-radius: 15px;
+	background-color: #DDDDDD;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }

@@ -18,7 +18,7 @@
   	</div>
   	
   	<div class="col-xs-12 noPadding">
-  		<div class="col-md-8 col-md-offset-2 col-lg-3 col-lg-offset-8 loginMdl">
+  		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 loginMdl">
   			<p class="loginMdlMsg"><spring:message code="signup.msg"/></p>
   			       
 				<form:form class="form-horizontal" role="form" method="post" id="form" modelAttribute="registerBean">
