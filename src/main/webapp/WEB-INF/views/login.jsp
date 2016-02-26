@@ -58,14 +58,14 @@
               <a type="button" class="btn btn-success btn-block btn-flat" href="<c:url value='register' />">Sign up if you are a new user</a>
             </div>
             <div class="col-md-12 form-group">
-              <button type="button" class="btn btn-danger btn-block btn-flat" id="forgrtPassBtn">Forgot Password ? </button>
+              <button type="button" class="btn btn-danger btn-block btn-flat btn-custom" id="forgrtPassBtn">Forgot Password ? </button>
             </div>
             <div class="col-md-12 noPadding" id="forgrtPassDiv">
 	        <div class="col-md-12 form-group">
 	            <input type="text" class="form-control" placeholder="Enter email or mobile no."/>
           	</div>
           	<div class="col-md-6 form-group">
-              <button type="button" class="btn btn-danger btn-block btn-flat" id="forgrtPassBtn">Submit</button>
+              <button type="button" class="btn btn-danger btn-block btn-flat btn-custom2" id="forgrtPassBtn">Submit</button>
             </div>
             </div>
           </div>
