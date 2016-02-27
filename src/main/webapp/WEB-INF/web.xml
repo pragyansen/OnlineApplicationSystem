@@ -9,6 +9,12 @@
 		<param-value>/WEB-INF/spring/*-context.xml</param-value>
 	</context-param>
 	
+	<!-- Setting System Variables -->
+	<listener>
+    	<listener-class>com.onlineapplication.security.WebAppPropertiesListener</listener-class>
+	</listener>
+	
+	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -68,8 +74,8 @@
 
 
 	<!-- Disables Servlet Container welcome file handling. Needed for compatibility with Servlet 3.0 and Tomcat 7.0 -->
-	<welcome-file-list>
+<!-- 	<welcome-file-list>
 		<welcome-file></welcome-file>
-	</welcome-file-list>	
+	</welcome-file-list> -->	
 
 </web-app>

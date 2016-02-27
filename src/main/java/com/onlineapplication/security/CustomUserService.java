@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import com.onlineapplication.model.Student;
 import com.onlineapplication.service.StudentService;
 
-/*@Service*/
+@Service
 public class CustomUserService implements UserDetailsService {
 
 	@Autowired
