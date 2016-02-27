@@ -25,18 +25,18 @@
 		</session-management>
 	</http>
 
-<!-- 	<authentication-manager>
+	<authentication-manager>
 		<authentication-provider>
 			<user-service>
 				<user name="admin" password="admin" authorities="ROLE_USER" />
 			</user-service>
 		</authentication-provider>
-	</authentication-manager> -->
+	</authentication-manager>
 	
-	<authentication-manager>
+<!-- 	<authentication-manager>
 		<authentication-provider user-service-ref="customUserService">
 			
 		</authentication-provider>
-	</authentication-manager>
+	</authentication-manager> -->
 
 </beans:beans>
