@@ -7,5 +7,4 @@
 	<script	src="resources/plugins/jQueryUI/jquery-ui.min.js"></script>
 	<!-- Bootstrap 3.3.2 JS -->
 	<script	src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="resources/bootstrap/js/angular.min.js" type="text/javascript"></script>
 	<script src="resources/bootstrap/js/loginapp.js" type="text/javascript"></script>

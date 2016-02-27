@@ -47,7 +47,7 @@
 					</c:if>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					<div class="form-group ${not empty emailHasBindErrors?"has-error":""}">
-						<form:label path="email" class="control-label col-md-2 noPadding">Email:
+						<form:label path="email" class="control-label col-md-2">Email:
 						</form:label>
 						<div class="col-md-10">
 							<form:input type="email" class="form-control" path="email"	placeholder="Enter email" />
@@ -55,7 +55,7 @@
 						</div>
 					</div>
 					<div class="form-group ${not empty nameHasBindErrors?"has-error":""}">
-						<form:label path="name" class="control-label col-md-2 noPadding">Name:
+						<form:label path="name" class="control-label col-md-2">Name:
 						</form:label>
 						<div class="col-md-10">
 							<form:input type="text" class="form-control" path="name"	placeholder="Enter Name"></form:input>
@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="form-group ${not empty phoneHasBindErrors?"has-error":""}">
-						<form:label path="phone" class="control-label col-md-2 noPadding">Mobile:
+						<form:label path="phone" class="control-label col-md-2">Mobile:
 						</form:label>
 						<div class="col-md-10">
 							<form:input type="text" cssClass="form-control" path="phone" placeholder="Enter Mobile No." cssErrorClass="form-control"></form:input>
