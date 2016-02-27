@@ -75,13 +75,20 @@ public class SecurityController {
 			model.addAttribute("error", "error");
 			return null;
 		}
-		String message = "Registration Success, please check mail inbox for password";
-		model.addAttribute("msg", message);
 
+		if(studentService.studentAlreadyExists(registerBean)){
+			String message = "Account already present. Please use forgot password to retrive";
+			model.addAttribute("error", message);
+			return "login";
+		}
+		
 		Student student = studentService.saveNewStudent(registerBean);
 
 		if(null != student)
 			mailService.sendMail(student);
+		
+		String message = "Registration Success, please check mail inbox for password";
+		model.addAttribute("msg", message);
 
 		return "login";
 

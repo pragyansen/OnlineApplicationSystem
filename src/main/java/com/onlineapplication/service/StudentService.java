@@ -16,7 +16,7 @@ public class StudentService {
 	@Autowired
 	PasswordGenerator passwordGenerator;
 	
-	public Student saveNewStudent(RegisterBean registerBean){
+	public Student saveNewStudent(RegisterBean registerBean){		
 		try{
 			Student student = new Student();
 			student.setName(registerBean.getName());
@@ -33,5 +33,13 @@ public class StudentService {
 
 	public Student fetchStudentByEmail(String email) {
 		return studentDao.findCustomer(email);
+	}
+
+	public boolean studentAlreadyExists(RegisterBean registerBean) {
+		if((null != studentDao.findCustomer(registerBean.getEmail())) || (null != studentDao.findCustomerByPhone(registerBean.getPhone()))){
+			return true;
+		}
+		
+		return false;
 	}
 }
