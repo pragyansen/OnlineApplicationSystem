@@ -15,7 +15,10 @@ public class DashboardController {
 		return "dashboard";
 	}
 	
-	
+	@RequestMapping(value = "/personalDetails", method=RequestMethod.GET)
+	public String personalDetails(){
+		return "personalDetails";
+	}
 
 	
 }
