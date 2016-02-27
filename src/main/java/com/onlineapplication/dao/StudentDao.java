@@ -21,12 +21,12 @@ public class StudentDao {
         this.entityManager.persist(student);
     }
 	
-	public Student findCustomer(String email) {
+	public Student findStudent(String email) {
         if (email == null) return null;
         return entityManager.find(Student.class, email);
     }
 
-	public Student findCustomerByPhone(String phone) {
+	public Student findStudentByPhone(String phone) {
 		TypedQuery<Student> q = entityManager.createQuery("SELECT o FROM Student AS o WHERE o.phone = :phone", Student.class);
 		q.setParameter("phone", phone);
 		if (CollectionUtils.isEmpty(q.getResultList()))

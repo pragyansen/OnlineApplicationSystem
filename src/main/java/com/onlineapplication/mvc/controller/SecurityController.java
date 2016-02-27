@@ -81,12 +81,12 @@ public class SecurityController {
 			model.addAttribute("error", message);
 			return "login";
 		}
-		
+
 		Student student = studentService.saveNewStudent(registerBean);
 
 		if(null != student)
-			mailService.sendMail(student);
-		
+			mailService.sendNewRegistrationMail(student);
+
 		String message = "Registration Success, please check mail inbox for password";
 		model.addAttribute("msg", message);
 
@@ -98,8 +98,18 @@ public class SecurityController {
 	@ResponseBody
 	public ResponseEntity<String> data(@PathVariable String type, @PathVariable String id){
 		logger.debug(type + " -- " + id);
-
-		return new ResponseEntity<String>(new String("Mail Sent to registered mail address"), HttpStatus.OK);
+		Student student = null;
+		if(type == "email"){
+			student = studentService.fetchStudentByEmail(id);
+		} else if(type == "phone"){
+			student = studentService.fetchStudentByPhone(id);
+		}
+		if(null == student){
+			return new ResponseEntity<String>(new String("Account doesn't exist"), HttpStatus.NOT_FOUND);
+		} else {
+			mailService.sendForgotPasswordMail(student);
+			return new ResponseEntity<String>(new String("Mail Sent to registered mail address"), HttpStatus.OK);
+		}
 	}
 
 }

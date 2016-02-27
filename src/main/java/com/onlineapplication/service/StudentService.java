@@ -32,14 +32,17 @@ public class StudentService {
 	}
 
 	public Student fetchStudentByEmail(String email) {
-		return studentDao.findCustomer(email);
+		return studentDao.findStudent(email);
 	}
 
 	public boolean studentAlreadyExists(RegisterBean registerBean) {
-		if((null != studentDao.findCustomer(registerBean.getEmail())) || (null != studentDao.findCustomerByPhone(registerBean.getPhone()))){
+		if((null != studentDao.findStudent(registerBean.getEmail())) || (null != studentDao.findStudentByPhone(registerBean.getPhone()))){
 			return true;
 		}
-		
 		return false;
+	}
+	
+	public Student fetchStudentByPhone(String phone){
+		return studentDao.findStudentByPhone(phone);
 	}
 }

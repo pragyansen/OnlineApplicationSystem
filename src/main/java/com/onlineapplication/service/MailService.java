@@ -31,7 +31,7 @@ public class MailService {
 	
 	private static final Logger logger = Logger.getLogger(SecurityController.class);
 	
-    public void sendMail(final Student student) {
+    public void sendNewRegistrationMail(final Student student) {
     	
     	  MimeMessagePreparator preparator = new MimeMessagePreparator() {
 
@@ -60,5 +60,35 @@ public class MailService {
               System.err.println(ex.getMessage());
           }
     }
+    
+    public void sendForgotPasswordMail(final Student student) {
+    	
+  	  MimeMessagePreparator preparator = new MimeMessagePreparator() {
+
+            @SuppressWarnings("deprecation")
+			public void prepare(MimeMessage mimeMessage) throws Exception {
+          	  MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
+          	  message.setTo(student.getEmail());
+          	  message.setFrom(new InternetAddress("pragyan.sen@gmail.com"));
+          	  message.setSubject("Registration Success");
+
+                
+                Map<String,Object> model = new HashMap<String, Object>();
+                model.put("student", student);
+                String text = VelocityEngineUtils.mergeTemplateIntoString(
+                        velocityEngine, "com/onlineapplication/service/forgot-password.vm", model);
+                message.setText(text, true);
+            }
+        };
+
+        try {
+            this.mailSender.send(preparator);
+            logger.debug("Mail Sent");
+        }
+        catch (MailException ex) {
+            // simply log it and go on...
+            System.err.println(ex.getMessage());
+        }
+  }
 	
 }
