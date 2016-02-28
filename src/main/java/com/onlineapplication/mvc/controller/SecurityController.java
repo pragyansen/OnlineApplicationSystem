@@ -1,5 +1,7 @@
 package com.onlineapplication.mvc.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -84,8 +87,8 @@ public class SecurityController {
 
 		Student student = studentService.saveNewStudent(registerBean);
 
-		if(null != student)
-			mailService.sendNewRegistrationMail(student);
+/*		if(null != student)
+			mailService.sendNewRegistrationMail(student);*/
 
 		String message = "Registration Success, please check mail inbox for password";
 		model.addAttribute("msg", message);
@@ -94,20 +97,24 @@ public class SecurityController {
 
 	}
 
-	@RequestMapping(value = "/forgetPass/{type}/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/forgetPass/{type}", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<String> data(@PathVariable String type, @PathVariable String id){
-		logger.debug(type + " -- " + id);
+	public ResponseEntity<String> data(@PathVariable String type, @RequestBody Map myMap){
+		logger.debug(type + " -- " + myMap.get("id"));
+		String id = (String) myMap.get("id");
+		if(null == id){
+			return new ResponseEntity<String>(new String("Account doesn't exist"), HttpStatus.NOT_FOUND);
+		}
 		Student student = null;
-		if(type == "email"){
+		if("email".equalsIgnoreCase(type)){
 			student = studentService.fetchStudentByEmail(id);
-		} else if(type == "phone"){
+		} else if("phone".equalsIgnoreCase(type)){
 			student = studentService.fetchStudentByPhone(id);
 		}
 		if(null == student){
 			return new ResponseEntity<String>(new String("Account doesn't exist"), HttpStatus.NOT_FOUND);
 		} else {
-			mailService.sendForgotPasswordMail(student);
+		//	mailService.sendForgotPasswordMail(student);
 			return new ResponseEntity<String>(new String("Mail Sent to registered mail address"), HttpStatus.OK);
 		}
 	}

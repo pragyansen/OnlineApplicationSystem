@@ -5,6 +5,9 @@
   <head>
     <jsp:include page="/WEB-INF/views/commons/csslinks.jsp" />
     <link href="resources/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+    	var token = ${_csrf.token}
+    </script>
 </head>
   <body onload='document.loginForm.username.focus();'>
   <div class="col-xs-12 noMargin noPadding">
