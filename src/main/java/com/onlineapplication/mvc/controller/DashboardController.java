@@ -48,7 +48,7 @@ public class DashboardController {
 		personalDetails.setEmail(SecurityContextHolder.getContext().getAuthentication().getName());
 		boolean status = studentService.savePersonalDetails(personalDetails);
 		
-		return "personalDetails";
+		return "redirect:/dashboard/";
 	}
 
 	

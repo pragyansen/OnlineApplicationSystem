@@ -74,7 +74,7 @@
 			<div class="form-group col-xs-12 noPadding">
 				<form:label path="age" class="control-form:label col-md-3">Age&nbsp;&nbsp;</form:label>
 				<div class="col-md-2">
-					<form:input path="age" type="text" class="form-control"	value="0" id="age" readonly="true"/>
+					<form:input path="age" type="text" class="form-control" id="age" readonly="true"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -102,7 +102,7 @@
 					Address Line 1<span style="color: red;"> *</span>
 				</form:label>
 				<div class="col-md-7">
-					<form:input path="adl1" type="text" class="form-control" placeholder="Appertment Number" />
+					<form:input path="adl1" type="text" class="form-control" placeholder="Apartment Number" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">

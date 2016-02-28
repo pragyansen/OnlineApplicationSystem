@@ -38,7 +38,13 @@ public class StudentDao {
 
 	@Transactional
 	public void savePersonalDetils(PersonalDetails personalDetails) {
-		this.entityManager.persist(personalDetails);
+		if(null != findPerosnalDetail(personalDetails.getEmail())){
+			this.entityManager.merge(personalDetails);
+			this.entityManager.flush();
+		} else {
+			this.entityManager.persist(personalDetails);
+		}
+		
 		
 	}
 
