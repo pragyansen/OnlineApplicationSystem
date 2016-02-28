@@ -8,6 +8,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.onlineapplication.model.FileDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Student;
 
@@ -51,6 +52,21 @@ public class StudentDao {
 	public PersonalDetails findPerosnalDetail(String email) {
 		if (email == null) return null;
         return entityManager.find(PersonalDetails.class, email);
+	}
+
+	@Transactional
+	public void saveFileDetails(FileDetails fileDetails) {
+		if(null != findPerosnalDetail(fileDetails.getEmail())){
+			this.entityManager.merge(fileDetails);
+			this.entityManager.flush();
+		} else {
+			this.entityManager.persist(fileDetails);
+		}
+		
+	}
+
+	public FileDetails findImageData(String email) {
+		return entityManager.find(FileDetails.class, email);
 	}
 	
 }

@@ -1,12 +1,19 @@
 package com.onlineapplication.service;
 
+import java.io.File;
+
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.FileCopyUtils;
 
 import com.onlineapplication.dao.StudentDao;
+import com.onlineapplication.model.FileDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Student;
+import com.onlineapplication.mvc.bean.MultiFile;
 import com.onlineapplication.mvc.bean.RegisterBean;
+import com.onlineapplication.mvc.bean.SingleFile;
 
 @Service
 public class StudentService {
@@ -58,5 +65,36 @@ public class StudentService {
 
 	public PersonalDetails fetchPersonalDetails(String email) {
 		return studentDao.findPerosnalDetail(email);
+	}
+
+	public boolean saveNewFileDetails(MultiFile multiFileBucket, String email) {
+		if(StringUtils.isNotBlank(email)){
+			FileDetails fileDetails = new FileDetails();
+			fileDetails.setEmail(email);
+			try{
+				fileDetails.setPhoto(multiFileBucket.getFiles().get(0).getFile().getBytes());
+				fileDetails.setPhotoName(multiFileBucket.getFiles().get(0).getFile().getOriginalFilename());
+				
+				fileDetails.setSignature(multiFileBucket.getFiles().get(1).getFile().getBytes());
+				fileDetails.setSignatureName(multiFileBucket.getFiles().get(1).getFile().getOriginalFilename());
+				
+				studentDao.saveFileDetails(fileDetails);
+				return true;
+			} catch (Exception e){
+				return false;
+			}
+		}
+		return false;
+	}
+
+	public byte[] fetchImageByType(String email, String type) {
+		FileDetails files = studentDao.findImageData(email);
+		if(null != files){
+			if("sign".equalsIgnoreCase(type))
+				return files.getSignature();
+			else if("photo".equalsIgnoreCase(type))
+				return files.getPhoto();
+		}
+		return null;
 	}
 }
