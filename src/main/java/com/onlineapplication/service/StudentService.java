@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.onlineapplication.dao.StudentDao;
+import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Student;
 import com.onlineapplication.mvc.bean.RegisterBean;
 
@@ -44,5 +45,14 @@ public class StudentService {
 	
 	public Student fetchStudentByPhone(String phone){
 		return studentDao.findStudentByPhone(phone);
+	}
+
+	public boolean savePersonalDetails(PersonalDetails personalDetails) {
+		try{
+			studentDao.savePersonalDetils(personalDetails);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
 	}
 }

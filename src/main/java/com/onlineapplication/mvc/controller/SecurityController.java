@@ -68,8 +68,7 @@ public class SecurityController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String processRegister(@Valid RegisterBean registerBean, BindingResult result,
-			Model model, HttpSession session){
+	public String processRegister(@Valid RegisterBean registerBean, BindingResult result, Model model){
 		logger.debug("LOG Success");
 
 		registerBeanValidator.validate(registerBean, result);

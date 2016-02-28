@@ -25,48 +25,46 @@
 			</a>
 		</div>
 		<div class="col-xs-12 formModel">
-		<form class="form-horizontal" role="form" method="post" id="personalDetailsform">
+		<form:form class="form-horizontal" role="form" method="post" id="personalDetailsform" modelAttribute="personalBean">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">Name&nbsp;&nbsp;</label>
+				<form:label path="name" class="control-form:label col-md-3">Name&nbsp;&nbsp;</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	value="Subhendu Pal" readonly></input>
+					<form:input path="name" type="text" class="form-control" readonly="true" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="fatherName" class="control-form:label col-md-3">
 					Father's Name<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="Father's Name"></input>
+					<form:input path="fatherName" type="text" class="form-control"	placeholder="Father's Name" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="motherName" class="control-form:label col-md-3">
 					Mother's Name<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="Mother's Name"></input>
+					<form:input path="motherName" type="text" class="form-control"	placeholder="Mother's Name" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="gender" class="control-form:label col-md-3">
 					Gender<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<label class="radio-inline"> <input type="radio"
-						name="gender" value="M">Male
-					</label> <label class="radio-inline"> <input type="radio"
-						name="gender" value="F">Female
-					</label>
+					<label class="radio-inline"> <form:radiobutton path="gender" name="gender" value="M" />Male</label>
+					<label class="radio-inline"> <form:radiobutton path="gender" name="gender" value="F" />Female</label>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding has-feedback">
-				<label class="control-label col-md-3">
+				<form:label path="dob" class="control-form:label col-md-3">
 					Date of Birth<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-3">
 					<div class="input-group date" id="dobDatePicker">
-						<input type="text" class="form-control" id="dob" readonly="readonly" />
+						<form:input path="dob" type="text" class="form-control" id="dob" readonly="true" />
 						<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 						</span>
@@ -74,86 +72,77 @@
 				</div>	
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">Age&nbsp;&nbsp;</label>
+				<form:label path="age" class="control-form:label col-md-3">Age&nbsp;&nbsp;</form:label>
 				<div class="col-md-2">
-					<input type="text" class="form-control"	value="0" id="age" readonly="readonly"></input>
+					<form:input path="age" type="text" class="form-control"	value="0" id="age" readonly="true"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="handicap" class="control-form:label col-md-3">
 					Physically Challenged<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<label class="radio-inline"> <input type="radio"
-						name="phc" value="Y">Yes
-					</label> <label class="radio-inline"> <input type="radio"
-						name="phc" value="N">No
-					</label>
+					<label class="radio-inline"> <form:radiobutton path="handicap" value="Y" />Yes</label>
+					 <label class="radio-inline"> <form:radiobutton path="handicap" value="N" />No</label>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="studentCast" class="control-form:label col-md-3">
 					Cast<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<label class="radio-inline"> <input type="radio"
-						name="cast" value="ST">ST
-					</label> <label class="radio-inline"> <input type="radio"
-						name="cast" value="SC">SC
-					</label>
-					<label class="radio-inline"> <input type="radio"
-						name="cast" value="OBC">OBC
-					</label> <label class="radio-inline"> <input type="radio"
-						name="cast" value="GEN">GEN
-					</label>
+					<label class="radio-inline"> <form:radiobutton path="studentCast" value="ST" />ST </label>
+					<label class="radio-inline"> <form:radiobutton path="studentCast" value="SC" />SC </label>
+					<label class="radio-inline"> <form:radiobutton path="studentCast" value="OBC" />OBC </label>
+					<label class="radio-inline"> <form:radiobutton path="studentCast" value="GEN" />GEN </label>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="adl1" class="control-form:label col-md-3">
 					Address Line 1<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="Appertment Number"></input>
+					<form:input path="adl1" type="text" class="form-control" placeholder="Appertment Number" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="adl2" class="control-form:label col-md-3">
 					Address Line 2&nbsp;&nbsp;
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="Street"></input>
+					<form:input path="adl2" type="text" class="form-control"	placeholder="Street"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="adl3"  class="control-form:label col-md-3">
 					Address Line 3&nbsp;&nbsp;
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="Locality"></input>
+					<form:input path="adl3" type="text" class="form-control"	placeholder="Locality"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="pin" class="control-form:label col-md-3">
 					PIN<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="Postal Code"></input>
+					<form:input path="pin" type="text" class="form-control"	placeholder="Postal Code"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="district" class="control-form:label col-md-3">
 					District<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="District"></input>
+					<form:input path="district" type="text" class="form-control"	placeholder="District"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
-				<label class="control-label col-md-3">
+				<form:label path="state" class="control-form:label col-md-3">
 					State<span style="color: red;"> *</span>
-				</label>
+				</form:label>
 				<div class="col-md-7">
-					<input type="text" class="form-control"	placeholder="State"></input>
+					<form:input path="state" type="text" class="form-control"	placeholder="State"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -161,7 +150,7 @@
 					<button type="submit" class="btn btn-primary btn-block">Submit</button>
 				</div>
 			</div>
-		</form>
+		</form:form>
 
 		</div>
 

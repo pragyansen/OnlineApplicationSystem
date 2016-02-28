@@ -8,6 +8,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Student;
 
 @Repository
@@ -33,6 +34,12 @@ public class StudentDao {
 			return null;
 		else return new Student();
 			
+	}
+
+	@Transactional
+	public void savePersonalDetils(PersonalDetails personalDetails) {
+		this.entityManager.persist(personalDetails);
+		
 	}
 	
 }
