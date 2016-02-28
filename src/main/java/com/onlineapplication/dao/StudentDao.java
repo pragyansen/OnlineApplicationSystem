@@ -41,5 +41,10 @@ public class StudentDao {
 		this.entityManager.persist(personalDetails);
 		
 	}
+
+	public PersonalDetails findPerosnalDetail(String email) {
+		if (email == null) return null;
+        return entityManager.find(PersonalDetails.class, email);
+	}
 	
 }

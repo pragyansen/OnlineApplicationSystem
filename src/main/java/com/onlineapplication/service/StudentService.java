@@ -55,4 +55,8 @@ public class StudentService {
 			return false;
 		}
 	}
+
+	public PersonalDetails fetchPersonalDetails(String email) {
+		return studentDao.findPerosnalDetail(email);
+	}
 }
