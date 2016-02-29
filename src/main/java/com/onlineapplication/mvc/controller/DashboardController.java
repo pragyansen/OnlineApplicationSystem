@@ -29,9 +29,11 @@ public class DashboardController {
 	
 	@ModelAttribute("personalBean")
 	public PersonalDetails createPerosnalBean() {
-		PersonalDetails personalBean = new PersonalDetails();
+		PersonalDetails personalBean = null;
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
 		personalBean = studentService.fetchPersonalDetails(email);
+		if(null == personalBean)
+			personalBean = new PersonalDetails();
 		personalBean.setName(studentService.fetchStudentByEmail(email).getName());
 		return personalBean;
 	}
