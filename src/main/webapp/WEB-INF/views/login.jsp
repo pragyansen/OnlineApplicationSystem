@@ -6,7 +6,7 @@
     <jsp:include page="/WEB-INF/views/commons/csslinks.jsp" />
     <link href="resources/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
-    	var token = ${_csrf.token}
+    	
     </script>
 </head>
   <body onload='document.loginForm.username.focus();'>
@@ -65,10 +65,10 @@
             </div>
             <div class="col-md-12 noPadding" id="forgrtPassDiv">
 	        <div class="col-md-12 form-group">
-	            <input type="text" class="form-control" placeholder="Enter email or mobile no."/>
+	            <input type="text" class="form-control" id="forgetPassInput" placeholder="Enter email or mobile no."/>
           	</div>
           	<div class="col-md-6 form-group">
-              <button type="button" class="btn btn-primary btn-block btn-flat" id="forgrtPassBtn">Submit</button>
+              <button type="button" class="btn btn-primary btn-block btn-flat" id="forgetPassSubmitBtn">Submit</button>
             </div>
             </div>
           </div>
@@ -89,6 +89,9 @@
           increaseArea: '20%' // optional
         });
       });
+      
+      var token = '${_csrf.token}';
+
     </script>
   </body>
 </html>
