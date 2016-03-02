@@ -5,7 +5,7 @@ Technologies used-
 
 1. Spring - Core, AOP, MVC, ORM, Security
 2. HTML5, CSS3, Bootstrap. jQuery
-3. Hibernate
+3. Hibernate with JPA
 4. Postgres/H2
 5. Redis for Session Management
 
