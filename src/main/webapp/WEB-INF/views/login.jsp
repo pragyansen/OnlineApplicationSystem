@@ -22,6 +22,11 @@
   		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 loginMdl">
         <p class="loginMdlMsg"><spring:message code="login.msg"/></p>
         
+        	<div class="alert alert-danger" style="display:none" id="notfound">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Account Doesn't Exist
+			</div>
+        
         <c:if test="${not empty error}">
 			<div class="alert alert-danger">
 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>

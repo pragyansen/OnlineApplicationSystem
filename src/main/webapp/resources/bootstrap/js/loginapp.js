@@ -40,6 +40,7 @@ $('#forgetPassSubmitBtn').click(function(){
 		$('#forgetPassInput').val('');
 		return;
 	}
+	$('#notfound').hide();
 	$.ajax({
 		type : 'POST',
 		async : true,
@@ -57,6 +58,7 @@ $('#forgetPassSubmitBtn').click(function(){
 			404: function(response){
 				alert('Sorry account not found');
 				$('#forgetPassInput').val('');
+				$('#notfound').show();
 			}
 		}
 	});
