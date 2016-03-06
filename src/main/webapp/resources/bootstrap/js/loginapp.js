@@ -31,17 +31,19 @@ $('#forgetPassSubmitBtn').click(function(){
 	var numPatt = /^[0]?[789]\d{9}$/;
 	var id = $('#forgetPassInput').val();
 	var path;
+	$('#forgotPasswordSuccess').hide();
+	$('#forgotPasswordFailure').hide();
+	$('#invalidInput').hide();
 	if(emailPatt.test(id)){
 		path='email';
 	} else if(numPatt.test(id)){
 		path = 'phone';
 	} else {
-		alert('Please provide valid input');
+		$('#invalidInput').show();
 		$('#forgetPassInput').val('');
 		return;
 	}
-	$('#forgotPasswordSuccess').hide();
-	$('#forgotPasswordFailure').hide();
+	$('#loginError').hide();
 	$.ajax({
 		type : 'POST',
 		async : true,
