@@ -40,7 +40,8 @@ $('#forgetPassSubmitBtn').click(function(){
 		$('#forgetPassInput').val('');
 		return;
 	}
-	$('#notfound').hide();
+	$('#forgotPasswordSuccess').hide();
+	$('#forgotPasswordFailure').hide();
 	$.ajax({
 		type : 'POST',
 		async : true,
@@ -51,14 +52,13 @@ $('#forgetPassSubmitBtn').click(function(){
 		},
 		data : JSON.stringify({id : id}),
 		success: function(response){
-			alert('You should receive a mail containing your password');
 			$('#forgetPassInput').val('');
+			$('#forgotPasswordSuccess').show();
 		},
 		statusCode : {
 			404: function(response){
-				alert('Sorry account not found');
 				$('#forgetPassInput').val('');
-				$('#notfound').show();
+				$('#forgotPasswordFailure').show();
 			}
 		}
 	});
