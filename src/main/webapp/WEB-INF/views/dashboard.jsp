@@ -28,16 +28,16 @@
 			<a href="../login?logout">Log Out</a>
 		</div>
   	</div>
-  	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+  	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 loginMdl">
 	  	
 	  	<div class="row">
-		  	<div class = "col-xs-12 bg-success dashboard-infoBox">Once you apply for a course, it's status will appear here</div>
+		  	<div class = "col-xs-12 col-md-10 col-md-offset-1 bg-success dashboard-infoBox">Once you apply for a course, it's status will appear here</div>
 		  	
 	  	</div>
 	  		  	
 	  	<div class="row">
 		  	<div class="col-xs-12 col-md-4">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="../dashboard/personalDetails">A. Enter Basic Details</a></div>
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="personalDetails">A. Enter Basic Details</a></div>
 		  	</div>
 		  	<div class="col-xs-12 col-md-4">
 		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="">B. Enter Educational Details</a></div>
