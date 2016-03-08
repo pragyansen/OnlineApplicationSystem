@@ -19,7 +19,7 @@
   		</a>
   	</div>
   	<div class="col-xs-12 noPadding">
-  		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 loginMdl">
+  		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 loginMdl">
         <p class="loginMdlMsg"><spring:message code="login.msg"/></p>
         
         	<div class="alert alert-danger" style="display:none" id="invalidInput">

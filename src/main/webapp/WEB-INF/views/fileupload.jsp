@@ -5,7 +5,7 @@
 <html>
  
 <head>
-    <title>Spring 4 MVC File Multi Upload Example</title>
+    <title>Photo & Signature Upload</title>
     
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -112,7 +112,7 @@
         <div class="btn btn-success"><a href="dashboard/">Back to Dashboard</a></div>
     </div>
     
-        <h1>Spring 4 MVC Multi File Upload Example </h1>
+        <h2>Photo & Signature Upload</h2>
         <form:form method="POST" modelAttribute="multifile" enctype="multipart/form-data" class="form-horizontal" action="fileUpload?${_csrf.parameterName}=${_csrf.token}">
             <c:forEach var="v" varStatus="vs" items="${multifile.files}">
                 <form:input type="file" path="files[${vs.index}].file" id="files[${vs.index}].file" class="form-control input-sm"/>

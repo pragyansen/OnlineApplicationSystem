@@ -36,14 +36,17 @@
 	  	</div>
 	  		  	
 	  	<div class="row">
-		  	<div class="col-xs-12 col-md-4">
+		  	<div class="col-xs-12 col-md-6">
 		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="personalDetails">A. Enter Basic Details</a></div>
 		  	</div>
-		  	<div class="col-xs-12 col-md-4">
+		  	<div class="col-xs-12 col-md-6">
 		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="">B. Enter Educational Details</a></div>
 		  	</div>
-		  	<div class="col-xs-12 col-md-4">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="">C. Apply for a Course</a></div>
+		  	<div class="col-xs-12 col-md-6">
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="../fileUpload">C. Upload Photo and Signature</a></div>
+		  	</div>
+		  	<div class="col-xs-12 col-md-6">
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="">D. Apply for a Course</a></div>
 		  	</div>
 	  	</div>
 	  	

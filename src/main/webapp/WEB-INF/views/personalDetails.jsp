@@ -154,6 +154,9 @@
 				<div class="col-md-2 col-md-offset-3">
 					<button type="submit" class="btn btn-primary btn-block">Submit</button>
 				</div>
+				<div class="col-md-2 col-md-offset-1 btn btn-success">
+					<a href="../dashboard/">Back to Dashboard</a>
+				</div>
 			</div>
 		</form:form>
 

@@ -34,6 +34,7 @@ a, a:hover {
 	background-color: #DDDDDD;
 	padding-top: 20px;
 	padding-bottom: 20px;
+/* 	min-width : 480px; */
 }
 
 .loginMdlMsg {
@@ -50,10 +51,10 @@ a, a:hover {
 }
 
 .dashboard-box{
-	min-height : 120px;
+	min-height : 70px;
 	margin-top : 50px;
 	text-align : center;
-	padding-top : 35px;
+	padding-top : 20px;
 	padding-left : 10px;
 	padding-right : 10px;
 	font-size: 20px;
