@@ -24,7 +24,7 @@
         
         	<div class="alert alert-danger" style="display:none" id="invalidInput">
 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-				Invalid username and/or password!
+				Invalid input!
 			</div>
 			
 			<div class="alert alert-danger" style="display:none" id="forgotPasswordFailure">
@@ -44,7 +44,7 @@
 			</div>
 		</c:if>
 		<c:if test="${not empty msg}">
-			<div class="alert alert-info">
+			<div class="alert alert-info" id="logoutSuccess">
 				<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
 				${msg}
 			</div>
