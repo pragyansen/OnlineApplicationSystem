@@ -1,5 +1,7 @@
 package com.onlineapplication.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -17,21 +19,26 @@ public class StudentDao {
 
 	@PersistenceContext
 	EntityManager entityManager;
-	
+
 	@Transactional
-    public void persist(Student student) {
-        this.entityManager.persist(student);
-    }
-	
+	public void persist(Student student) {
+		this.entityManager.persist(student);
+	}
+
 	public Student findStudent(String email) {
-        if (email == null) return null;
-        return entityManager.find(Student.class, email);
-    }
+		if (email == null) return null;
+		return entityManager.find(Student.class, email);
+	}
 
 	public Student findStudentByPhone(String phone) {
 		TypedQuery<Student> q = entityManager.createQuery("SELECT o FROM Student AS o WHERE o.phone = :phone", Student.class);
 		q.setParameter("phone", phone);
-		return q.getResultList().get(0);
+		List<Student> student = q.getResultList();
+		if(CollectionUtils.isEmpty(student)){
+			return null;
+		}else{
+			return q.getResultList().get(0);
+		}
 	}
 
 	@Transactional
@@ -42,13 +49,13 @@ public class StudentDao {
 		} else {
 			this.entityManager.persist(personalDetails);
 		}
-		
-		
+
+
 	}
 
 	public PersonalDetails findPerosnalDetail(String email) {
 		if (email == null) return null;
-        return entityManager.find(PersonalDetails.class, email);
+		return entityManager.find(PersonalDetails.class, email);
 	}
 
 	@Transactional
@@ -59,17 +66,17 @@ public class StudentDao {
 		} else {
 			this.entityManager.persist(fileDetails);
 		}
-		
+
 	}
 
 	public FileDetails findImageData(String email) {
 		return entityManager.find(FileDetails.class, email);
 	}
 
-	
+
 	@Transactional
 	public void merge(Student student) {
 		this.entityManager.merge(student);
 	}
-	
+
 }
