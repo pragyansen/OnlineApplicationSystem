@@ -49,7 +49,7 @@ public class SecurityController {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
-			model.addObject("error", "Invalid username and password!");
+			model.addObject("error", "Invalid username and/or password!");
 		}
 		if (logout != null) {
 			model.addObject("msg", "You've been logged out successfully.");

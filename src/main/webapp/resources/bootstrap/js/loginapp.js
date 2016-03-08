@@ -31,6 +31,8 @@ $('#forgetPassSubmitBtn').click(function(){
 	var numPatt = /^[0]?[789]\d{9}$/;
 	var id = $('#forgetPassInput').val();
 	var path;
+	$('#logoutSuccess').hide();
+	$('#loginError').hide();
 	$('#forgotPasswordSuccess').hide();
 	$('#forgotPasswordFailure').hide();
 	$('#invalidInput').hide();

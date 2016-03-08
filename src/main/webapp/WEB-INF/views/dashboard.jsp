@@ -10,8 +10,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- Bootstrap 3.3.2 -->
 	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<!-- 	Date Picker -->
-	<link href="../resources/bootstrap/css/datepicker3.css" rel="stylesheet" type="text/css" />
 	<link href="../resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
