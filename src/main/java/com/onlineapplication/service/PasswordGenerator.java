@@ -2,6 +2,7 @@ package com.onlineapplication.service;
 
 import java.util.Random;
 
+import org.junit.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,10 @@ public class PasswordGenerator {
 		return passwordEncoder.encode(password);
 	}
 
+	
+	@Test
+	public void testPassword(){
+		System.out.println(generateEncryptedPass("123456"));
+	}
 	
 }
