@@ -68,5 +68,11 @@ public class StudentDao {
 	public FileDetails findImageData(String email) {
 		return entityManager.find(FileDetails.class, email);
 	}
+
+	
+	@Transactional
+	public void merge(Student student) {
+		this.entityManager.merge(student);
+	}
 	
 }

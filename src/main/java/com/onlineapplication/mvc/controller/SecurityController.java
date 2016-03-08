@@ -113,6 +113,8 @@ public class SecurityController {
 		if(null == student){
 			return new ResponseEntity<String>(new String("Account doesn't exist"), HttpStatus.NOT_FOUND);
 		} else {
+		 	student = studentService.resetPassword(student);
+		 	System.out.println(student.getPassword());
 		//	mailService.sendForgotPasswordMail(student);
 			return new ResponseEntity<String>(new String("Mail Sent to registered mail address"), HttpStatus.OK);
 		}

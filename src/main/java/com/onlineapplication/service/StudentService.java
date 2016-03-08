@@ -98,4 +98,11 @@ public class StudentService {
 		}
 		return null;
 	}
+
+	public Student resetPassword(Student student) {
+		student.setPassword(passwordGenerator.randomString(8));
+		student.setHashedPass(passwordGenerator.generateEncryptedPass(student.getPassword()));
+		studentDao.merge(student);
+		return student;
+	}
 }
