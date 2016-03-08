@@ -85,7 +85,7 @@ public class SecurityController {
 		}
 
 		Student student = studentService.saveNewStudent(registerBean);
-
+		System.out.println(student.getPassword());
 /*		if(null != student)
 			mailService.sendNewRegistrationMail(student);*/
 

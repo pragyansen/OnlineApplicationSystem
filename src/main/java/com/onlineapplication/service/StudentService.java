@@ -31,6 +31,7 @@ public class StudentService {
 			student.setEmail(registerBean.getEmail().toLowerCase());
 			student.setPhone(registerBean.getPhone());
 			student.setPassword(passwordGenerator.randomString(8));
+			student.setHashedPass(passwordGenerator.generateEncryptedPass(student.getPassword()));
 			student.setRole("ROLE_USER");
 			studentDao.persist(student);
 			return student;

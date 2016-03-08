@@ -2,6 +2,7 @@ package com.onlineapplication.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Student {
@@ -13,9 +14,12 @@ public class Student {
 	
 	private String phone;
 
+	@Transient
 	private String password;
 	
 	private String role;
+	
+	private String hashedPass;
 	
 	public String getEmail() {
 		return email;
@@ -55,5 +59,13 @@ public class Student {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getHashedPass() {
+		return hashedPass;
+	}
+
+	public void setHashedPass(String hashedPass) {
+		this.hashedPass = hashedPass;
 	}
 }

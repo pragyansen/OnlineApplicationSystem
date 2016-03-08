@@ -29,7 +29,7 @@ public class CustomUserService implements UserDetailsService {
 	         new UsernameNotFoundException("Username not found: " + username);
 		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
 		list.add(new SimpleGrantedAuthority(student.getRole()));
-		return new User(username, student.getPassword(), list);
+		return new User(username, student.getHashedPass(), list);
 	}
 
 }
