@@ -43,6 +43,11 @@ public class DashboardController {
 		return "personalDetails";
 	}
 	
+	@RequestMapping(value = "/educationalDetails", method=RequestMethod.GET)
+	public String educationalDetails(){
+		return "educationalDetails";
+	}
+	
 	@RequestMapping(value = "/personalDetails", method=RequestMethod.POST)
 	public String personalDetailsSubmit(@Valid PersonalDetails personalDetails, BindingResult result, Model model){
 		
