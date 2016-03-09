@@ -1,23 +1,27 @@
 package com.onlineapplication.mvc.bean;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MultiFile {
 	
-	private List<SingleFile> files = new ArrayList<SingleFile>();
+	private SingleFile photo;
 	
-	public MultiFile(){
-		files.add(new SingleFile());
-		files.add(new SingleFile());
+	private SingleFile sign;
+
+	public SingleFile getPhoto() {
+		return photo;
 	}
 
-	public List<SingleFile> getFiles() {
-		return files;
+	public void setPhoto(SingleFile photo) {
+		this.photo = photo;
 	}
 
-	public void setFiles(List<SingleFile> files) {
-		this.files = files;
+	public SingleFile getSign() {
+		return sign;
 	}
+
+	public void setSign(SingleFile sign) {
+		this.sign = sign;
+	}
+	
+
 
 }

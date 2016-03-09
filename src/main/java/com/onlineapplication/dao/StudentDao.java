@@ -60,7 +60,7 @@ public class StudentDao {
 
 	@Transactional
 	public void saveFileDetails(FileDetails fileDetails) {
-		if(null != findPerosnalDetail(fileDetails.getEmail())){
+		if(null != findImageData(fileDetails.getEmail())){
 			this.entityManager.merge(fileDetails);
 			this.entityManager.flush();
 		} else {

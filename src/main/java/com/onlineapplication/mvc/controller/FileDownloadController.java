@@ -13,7 +13,7 @@ import com.onlineapplication.service.StudentService;
 
 @Controller
 
-@RequestMapping(path="/getFile")
+@RequestMapping(path="/dashboard/getFile")
 public class FileDownloadController {
 
 	@Autowired
