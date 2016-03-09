@@ -50,11 +50,10 @@ a, a:hover {
 	padding-bottom: 20px;
 }
 
-.altFormModel {
+.altFormModel{
 	background-color: #DDDDDD;
-	padding-top : 0px;
-	padding-bottom : 0px;
-/* 	border-radius : 15px; */
+/* 	padding-top: 10px; */
+/* 	padding-bottom: 10px; */
 }
 
 .dashboard-box{

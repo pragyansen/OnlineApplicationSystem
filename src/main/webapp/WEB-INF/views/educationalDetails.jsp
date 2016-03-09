@@ -46,6 +46,20 @@
 
 					<div class="form-group col-xs-12 noPadding">
 						<form:label path="fatherName" class="control-form:label col-md-3">
+					Board<span style="color: red;"> *</span>
+						</form:label>
+						<div class="col-md-3">
+							<select class="form-control">
+								<option>WBCHSE</option>
+								<option>ISC</option>
+								<option>CBSE</option>
+								<option>Other</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group col-xs-12 noPadding">
+						<form:label path="fatherName" class="control-form:label col-md-3">
 					Year of Passing<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
@@ -53,17 +67,37 @@
 								placeholder="2016" />
 						</div>
 					</div>
+					
+					<div class="form-group col-xs-12 noPadding">
+						<form:label path="fatherName" class="control-form:label col-md-3">
+					Total Marks Obtained<span style="color: red;"> *</span>
+						</form:label>
+						<div class="col-md-3">
+							<form:input path="fatherName" type="text" class="form-control"
+								placeholder="400" />
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12 noPadding">
+						<form:label path="fatherName" class="control-form:label col-md-3">
+					Percentage Obtained<span style="color: red;"> *</span>
+						</form:label>
+						<div class="col-md-3">
+							<form:input path="fatherName" type="text" class="form-control"
+								placeholder="400" />
+						</div>
+					</div>
 
 					<div class="form-group col-xs-12 h4">Enter marks obtained for
 						individual subjects</div>
 
 					<c:forEach var="i" begin="1" end="5" step="1" varStatus="status">
-						<div class="form-group col-xs-12 noPadding">
+						<div class="form-group col-xs-12 col-sm-6 noPadding">
 							<form:label path="fatherName"
 								class="control-form:label col-md-3 sr-only">
 				Subject 1<span style="color: red;"> *</span>
 							</form:label>
-							<div class="col-xs-3">
+							<div class="col-xs-3 col-sm-6">
 								<select class="form-control">
 									<option>Bengali</option>
 									<option>English</option>
@@ -78,16 +112,6 @@
 							</div>
 						</div>
 					</c:forEach>
-					
-					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
-					Total Marks Obtained<span style="color: red;"> *</span>
-						</form:label>
-						<div class="col-md-3">
-							<form:input path="fatherName" type="text" class="form-control"
-								placeholder="400" />
-						</div>
-					</div>
 
 				</div>
 				
@@ -104,6 +128,20 @@
 						</div>
 					</div>
 
+					<div class="form-group col-xs-12 noPadding">
+						<form:label path="fatherName" class="control-form:label col-md-3">
+					Board<span style="color: red;"> *</span>
+						</form:label>
+						<div class="col-md-3">
+							<select class="form-control">
+								<option>WBSSE</option>
+								<option>ISC</option>
+								<option>CBSE</option>
+								<option>Other</option>
+							</select>
+						</div>
+					</div>
+					
 					<div class="form-group col-xs-12 noPadding">
 						<form:label path="fatherName" class="control-form:label col-md-3">
 					Year of Passing<span style="color: red;"> *</span>
@@ -123,6 +161,16 @@
 								placeholder="400" />
 						</div>
 					</div>
+					
+					<div class="form-group col-xs-12 noPadding">
+						<form:label path="fatherName" class="control-form:label col-md-3">
+					Percentage Obtained<span style="color: red;"> *</span>
+						</form:label>
+						<div class="col-md-3">
+							<form:input path="fatherName" type="text" class="form-control"
+								placeholder="400" />
+						</div>
+					</div>
 
 				</div>
 
@@ -135,8 +183,8 @@
 					<div class="col-md-2 col-md-offset-3">
 						<button type="submit" class="btn btn-primary btn-block">Submit</button>
 					</div>
-					<div class="col-md-2 col-md-offset-1">
-						<button type="button" class="btn btn-success btn-block">Back to Dashboard</button>
+					<div class="col-md-2 col-md-offset-1 btn btn-success">
+						<a href="../dashboard">Back to Dashboard</a>
 					</div>
 				</div>
 			</form:form>
