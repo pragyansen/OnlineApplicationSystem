@@ -31,60 +31,60 @@
   		</div>
   		
 		<div class="col-xs-12 altFormModel">
-		<form:form class="form-horizontal" role="form" method="post" id="educationalDetailsform" modelAttribute="personalBean">
+		<form:form class="form-horizontal" role="form" method="post" id="educationalDetailsform" modelAttribute="educationalBean">
 				<div class="col-md-6">
 					<div class="form-group col-xs-12 h3">10+2 Details</div>
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="institution12" class="control-form:label col-md-3">
 					Name of the Institution<span style="color: red;"> *</span>
 						</form:label>
-						<div class="col-md-9">
-							<form:input path="fatherName" type="text" class="form-control"
+						<div class="col-md-7">
+							<form:input path="institution12" type="text" class="form-control"
 								placeholder="XYZ School, Kolkata" />
 						</div>
 					</div>
 
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="board12" class="control-form:label col-md-3">
 					Board<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<select class="form-control">
-								<option>WBCHSE</option>
-								<option>ISC</option>
-								<option>CBSE</option>
+							<form:select class="form-control" path="board12">
+								<option value="WBCHSE">WBCHSE</option>
+								<option value="ISC">ISC</option>
+								<option value="CBSE">CBSE</option>
 								<option>Other</option>
-							</select>
+							</form:select>
 						</div>
 					</div>
 
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="yearOfPassing12" class="control-form:label col-md-3">
 					Year of Passing<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<form:input path="fatherName" type="text" class="form-control"
+							<form:input path="yearOfPassing12" type="text" class="form-control"
 								placeholder="2016" />
 						</div>
 					</div>
 					
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="totalMarks12" class="control-form:label col-md-3">
 					Total Marks Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<form:input path="fatherName" type="text" class="form-control"
+							<form:input path="totalMarks12" type="text" class="form-control"
 								placeholder="400" />
 						</div>
 					</div>
 					
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="percentage12" class="control-form:label col-md-3">
 					Percentage Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<form:input path="fatherName" type="text" class="form-control"
-								placeholder="400" />
+							<form:input path="percentage12" type="text" class="form-control"
+								placeholder="80" />
 						</div>
 					</div>
 
@@ -93,7 +93,7 @@
 
 					<c:forEach var="i" begin="1" end="5" step="1" varStatus="status">
 						<div class="form-group col-xs-12 col-sm-6 noPadding">
-							<form:label path="fatherName"
+							<form:label path="marks1"
 								class="control-form:label col-md-3 sr-only">
 				Subject 1<span style="color: red;"> *</span>
 							</form:label>
@@ -107,7 +107,7 @@
 								</select>
 							</div>
 							<div class="col-xs-3">
-								<form:input path="fatherName" type="text" class="form-control"
+								<form:input path="marks1" type="text" class="form-control"
 									placeholder="80" />
 							</div>
 						</div>
@@ -119,72 +119,67 @@
 				<div class="col-md-6">
 					<div class="form-group col-xs-12 h3">10 Details</div>
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="institution10" class="control-form:label col-md-3">
 					Name of the Institution<span style="color: red;"> *</span>
 						</form:label>
-						<div class="col-md-9">
-							<form:input path="fatherName" type="text" class="form-control"
+						<div class="col-md-7">
+							<form:input path="institution10" type="text" class="form-control"
 								placeholder="XYZ School, Kolkata" />
 						</div>
 					</div>
 
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="board10" class="control-form:label col-md-3">
 					Board<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<select class="form-control">
-								<option>WBSSE</option>
-								<option>ISC</option>
-								<option>CBSE</option>
+							<form:select class="form-control" path="board10">
+								<option value="WBBSE">WBSSE</option>
+								<option value="ISC">ISC</option>
+								<option value="CBSE">CBSE</option>
 								<option>Other</option>
-							</select>
+							</form:select>
 						</div>
 					</div>
 					
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="yearOfPassing10" class="control-form:label col-md-3">
 					Year of Passing<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<form:input path="fatherName" type="text" class="form-control"
+							<form:input path="yearOfPassing10" type="text" class="form-control"
 								placeholder="2016" />
 						</div>
 					</div>					
 					
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="totalMarks10" class="control-form:label col-md-3">
 					Total Marks Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<form:input path="fatherName" type="text" class="form-control"
+							<form:input path="totalMarks10" type="text" class="form-control"
 								placeholder="400" />
 						</div>
 					</div>
 					
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="fatherName" class="control-form:label col-md-3">
+						<form:label path="percentage10" class="control-form:label col-md-3">
 					Percentage Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
-							<form:input path="fatherName" type="text" class="form-control"
-								placeholder="400" />
+							<form:input path="percentage10" type="text" class="form-control"
+								placeholder="80" />
 						</div>
 					</div>
 
 				</div>
-
-
-
-
-
 
 				<div class="form-group col-xs-12 noPadding">
 					<div class="col-md-2 col-md-offset-3">
 						<button type="submit" class="btn btn-primary btn-block">Submit</button>
 					</div>
 					<div class="col-md-2 col-md-offset-1 btn btn-success">
-						<a href="../dashboard">Back to Dashboard</a>
+						<a href="../dashboard/">Back to Dashboard</a>
 					</div>
 				</div>
 			</form:form>

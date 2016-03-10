@@ -19,7 +19,7 @@ import com.onlineapplication.mvc.bean.SingleFile;
 import com.onlineapplication.service.StudentService;
 
 @Controller
-@RequestMapping(path="/dasboard/fileupload")
+@RequestMapping(path="/dashboard/fileupload")
 public class FileUploadController {
 
 	@Autowired

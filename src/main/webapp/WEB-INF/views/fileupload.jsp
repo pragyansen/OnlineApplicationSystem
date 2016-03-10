@@ -109,7 +109,7 @@
                 File  <strong>${fileName}</strong> uploaded successfully<br/>
             </c:forEach>
             <br/>
-        <div class="btn btn-success"><a href="dashboard/">Back to Dashboard</a></div>
+        <div class="btn btn-success"><a href="../dashboard/">Back to Dashboard</a></div>
     </div>
     
         <h2>Photo & Signature Upload</h2>
