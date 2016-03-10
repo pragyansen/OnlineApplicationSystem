@@ -29,11 +29,6 @@ public class FileUploadController {
 	
 	@Autowired
 	MultiFileValidator multifileValidator;
-	
-/*	@ModelAttribute("multifile")
-	public MultiFile getMultiFile(){
-		return new MultiFile();
-	}*/
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String fileUploadForm(ModelMap model) {
