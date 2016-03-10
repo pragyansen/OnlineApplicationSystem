@@ -21,11 +21,7 @@ import com.onlineapplication.mvc.validator.MultiFileValidator;
 import com.onlineapplication.service.StudentService;
 
 @Controller
-<<<<<<< HEAD
-@RequestMapping(path="/dashboard/fileupload")
-=======
 @RequestMapping(path = "/dashboard/fileupload")
->>>>>>> 8837f69bcbf68d50b94e76a1ec386da20c57516f
 public class FileUploadController {
 
 	@Autowired
