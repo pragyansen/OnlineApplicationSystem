@@ -21,12 +21,12 @@ public class MultiFileValidator implements Validator {
 
 		if(multiBucket.getPhoto().getFile()!=null){
 			if (multiBucket.getPhoto().getFile().getSize() == 0) {
-				 errors.rejectValue("file", "photo is missing");  
+				 errors.rejectValue("photo.file", "validation.file.notfound");  
 			}
 		}
 		if(multiBucket.getSign().getFile()!=null){
 			if (multiBucket.getSign().getFile().getSize() == 0) {
-				 errors.rejectValue("file", "sign is missing");  
+				 errors.rejectValue("sign.file", "validation.file.notfound");  
 			}
 		}
 
