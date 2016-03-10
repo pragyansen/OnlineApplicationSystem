@@ -43,7 +43,7 @@
 		<beans:property name="roleUrlMap">
 			<beans:map>
 				<beans:entry key="ROLE_USER" value="/dashboard/" />
-				<beans:entry key="/" value="/controlpanel/" />
+				<beans:entry key="ROLE_ADMIN" value="/controlpanel/" />
 			</beans:map>
 		</beans:property>
 	</beans:bean>
