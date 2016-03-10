@@ -8,7 +8,6 @@
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/login*" access="permitAll" />
 		<intercept-url pattern="/register" access="permitAll" />
-		
 		<intercept-url pattern="/dashboard/*" access="hasAnyRole('ROLE_USER')" />
 		<intercept-url pattern="/controlpanel/*" access="hasAnyRole('ROLE_ADMIN')" />
 		<form-login login-page="/login" 
@@ -44,7 +43,7 @@
 		<beans:property name="roleUrlMap">
 			<beans:map>
 				<beans:entry key="ROLE_USER" value="/dashboard/" />
-				<beans:entry key="ROLE_ADMIN" value="/controlpanel/" />
+				<beans:entry key="/" value="/controlpanel/" />
 			</beans:map>
 		</beans:property>
 	</beans:bean>

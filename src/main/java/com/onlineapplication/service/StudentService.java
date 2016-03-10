@@ -73,11 +73,11 @@ public class StudentService {
 			FileDetails fileDetails = new FileDetails();
 			fileDetails.setEmail(email);
 			try{
-				fileDetails.setPhoto(multiFileBucket.getFiles().get(0).getFile().getBytes());
-				fileDetails.setPhotoName(multiFileBucket.getFiles().get(0).getFile().getOriginalFilename());
+				fileDetails.setPhoto(multiFileBucket.getPhoto().getFile().getBytes());
+				fileDetails.setPhotoName(multiFileBucket.getPhoto().getFile().getOriginalFilename());
 				
-				fileDetails.setSignature(multiFileBucket.getFiles().get(1).getFile().getBytes());
-				fileDetails.setSignatureName(multiFileBucket.getFiles().get(1).getFile().getOriginalFilename());
+				fileDetails.setSignature(multiFileBucket.getSign().getFile().getBytes());
+				fileDetails.setSignatureName(multiFileBucket.getSign().getFile().getOriginalFilename());
 				
 				studentDao.saveFileDetails(fileDetails);
 				return true;

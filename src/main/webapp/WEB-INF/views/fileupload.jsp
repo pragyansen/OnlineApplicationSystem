@@ -113,13 +113,15 @@
     </div>
     
         <h2>Photo & Signature Upload</h2>
-        <form:form method="POST" modelAttribute="multifile" enctype="multipart/form-data" class="form-horizontal" action="fileUpload?${_csrf.parameterName}=${_csrf.token}">
-            <c:forEach var="v" varStatus="vs" items="${multifile.files}">
-                <form:input type="file" path="files[${vs.index}].file" id="files[${vs.index}].file" class="form-control input-sm"/>
+        <form:form method="POST" modelAttribute="multifile" enctype="multipart/form-data" class="form-horizontal" action="fileupload?${_csrf.parameterName}=${_csrf.token}">
+                <form:input type="file" path="photo.file" id="photo.file" class="form-control input-sm"/>
                 <div class="has-error">
-                    <form:errors path="files[${vs.index}].file" class="help-inline"/>
+                    <form:errors path="photo.file" class="help-inline"/>
                 </div>
-            </c:forEach>
+                 <form:input type="file" path="sign.file" class="form-control input-sm"/>
+                <div class="has-error">
+                    <form:errors path="sign.file" class="help-inline"/>
+                </div>
             <br/>
             <div class="row">
                 <div class="form-actions floatRight">
@@ -130,8 +132,8 @@
     </div>
     
     
-    <img src="http://localhost:8080/online-application/getFile/getImage/photo" alt="car_image"/>
-    <img src="http://localhost:8080/online-application/getFile/getImage/sign" alt="car_image"/>
+    <img src="getFile/getImage/photo" alt="car_image"/>
+    <img src="getFile/getImage/sign" alt="car_image"/>
     </div>
     </div>
 </body>
