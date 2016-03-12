@@ -1,5 +1,6 @@
 package com.onlineapplication.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,6 +33,7 @@ public class EducationalDetails {
 	
 	public EducationalDetails()
 	{
+		subjects = new ArrayList<Subject>();
 		subjects.add(new Subject("Bengali","B",""));
 		subjects.add(new Subject("English","E",""));
 		subjects.add(new Subject("Maths","M",""));

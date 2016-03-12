@@ -80,7 +80,6 @@ public class DashboardController {
 		System.out.println(educationalDetails.getBoard10());
 		System.out.println(educationalDetails.getInstitution12());
 		System.out.println(educationalDetails.getEmail());
-		System.out.println(educationalDetails.getSubjects());
 //		boolean status = studentService.saveEducationalDetails(educationalDetails);
 		
 		return "redirect:/dashboard/";
