@@ -3,9 +3,6 @@ package com.onlineapplication.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class EducationalDetails {
 	
 	private String email;
@@ -30,6 +27,14 @@ public class EducationalDetails {
 	private String marks3;
 	private String marks4;
 	private String marks5;
+	
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
 	
 	private List<Subject> subjects;
 	
