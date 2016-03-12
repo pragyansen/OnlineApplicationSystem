@@ -1,5 +1,8 @@
 package com.onlineapplication.model;
 
+import java.util.List;
+
+
 public class EducationalDetails {
 	
 	private String email;
@@ -25,7 +28,16 @@ public class EducationalDetails {
 	private String marks4;
 	private String marks5;
 	
+	private List<Subject> subjects;
 	
+	public EducationalDetails()
+	{
+		subjects.add(new Subject("Bengali","B",""));
+		subjects.add(new Subject("English","E",""));
+		subjects.add(new Subject("Maths","M",""));
+		subjects.add(new Subject("Physics","P",""));
+		subjects.add(new Subject("Chemistry","C",""));
+	}
 	
 	public String getEmail() {
 		return email;
@@ -122,6 +134,12 @@ public class EducationalDetails {
 	}
 	public void setMarks5(String marks5) {
 		this.marks5 = marks5;
-	}	
+	}
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
 
 }
