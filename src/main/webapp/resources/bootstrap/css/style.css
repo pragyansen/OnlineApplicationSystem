@@ -14,10 +14,6 @@ a, a:hover {
 }
 
 
-.mainContainer {
-	
-}
-
 .header {
 	color: White;
 	font-size: 30px;
@@ -75,4 +71,8 @@ a, a:hover {
 	font-size: 18px;
 	color: #444444;
 	border-radius: 5px;
+}
+
+.paddedBox {
+	padding : 20px;
 }
