@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
 public class EducationalDetails {
 	
 	private String email;
@@ -40,6 +42,7 @@ public class EducationalDetails {
 		subjects.add(new Subject("Physics","P",""));
 		subjects.add(new Subject("Chemistry","C",""));
 	}
+
 	
 	public String getEmail() {
 		return email;
@@ -136,12 +139,6 @@ public class EducationalDetails {
 	}
 	public void setMarks5(String marks5) {
 		this.marks5 = marks5;
-	}
-	public List<Subject> getSubjects() {
-		return subjects;
-	}
-	public void setSubjects(List<Subject> subjects) {
-		this.subjects = subjects;
-	}
+	}	
 
 }

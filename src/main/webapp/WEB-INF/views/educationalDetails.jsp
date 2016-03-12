@@ -46,7 +46,7 @@
 
 					<div class="form-group col-xs-12 noPadding">
 						<form:label path="board12" class="control-form:label col-md-3">
-							Board<span style="color: red;"> *</span>
+					Board<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-3">
 							<form:select class="form-control" path="board12">
@@ -91,10 +91,11 @@
 					<div class="form-group col-xs-12 h4">Enter marks obtained for
 						individual subjects</div>
 
-					<c:forEach var="i" varStatus="status" items="${EducationalDetails.subjects}">
+					<c:forEach var="i" begin="1" end="5" step="1" varStatus="status">
 						<div class="form-group col-xs-12 col-sm-6 noPadding">
-							<form:label path=""	class="control-form:label col-md-3 sr-only">
-									Subject 1<span style="color: red;"> *</span>
+							<form:label path="marks1"
+								class="control-form:label col-md-3 sr-only">
+				Subject 1<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-3 col-sm-6">
 								<select class="form-control">
@@ -106,7 +107,7 @@
 								</select>
 							</div>
 							<div class="col-xs-3">
-								<form:input path="subjects[${status.index}].subjectMarks" type="text" class="form-control"
+								<form:input path="marks1" type="text" class="form-control"
 									placeholder="80" />
 							</div>
 						</div>
