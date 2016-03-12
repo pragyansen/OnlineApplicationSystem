@@ -91,23 +91,23 @@
 					<div class="form-group col-xs-12 h4">Enter marks obtained for
 						individual subjects</div>
 
-					<c:forEach var="i" begin="1" end="5" step="1" varStatus="status">
+					<c:forEach var="v" varStatus="vs" items="${educationalBean.subjects}">
 						<div class="form-group col-xs-12 col-sm-6 noPadding">
-							<form:label path="marks1"
+							<form:label path=""
 								class="control-form:label col-md-3 sr-only">
-				Subject 1<span style="color: red;"> *</span>
+				Subject<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-3 col-sm-6">
-								<select class="form-control">
+								<form:select path="subjects[${vs.index}].subjectName" class="form-control">
 									<option>Bengali</option>
 									<option>English</option>
 									<option>Maths</option>
 									<option>Physics</option>
 									<option>Chemistry</option>
-								</select>
+								</form:select>
 							</div>
 							<div class="col-xs-3">
-								<form:input path="marks1" type="text" class="form-control"
+								<form:input path="subjects[${vs.index}].subjectMarks" type="text" class="form-control"
 									placeholder="80" />
 							</div>
 						</div>

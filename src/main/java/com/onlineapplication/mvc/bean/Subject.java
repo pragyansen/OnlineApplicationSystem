@@ -1,4 +1,4 @@
-package com.onlineapplication.model;
+package com.onlineapplication.mvc.bean;
 
 public class Subject{
 
