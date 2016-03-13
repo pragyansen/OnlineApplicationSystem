@@ -1,4 +1,7 @@
-package com.onlineapplication.model;
+package com.onlineapplication.mvc.bean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EducationalDetails {
 	
@@ -19,13 +22,18 @@ public class EducationalDetails {
 	private String percentage12;
 	private String percentage10;
 	
-	private String marks1;
-	private String marks2;
-	private String marks3;
-	private String marks4;
-	private String marks5;
+	private List<Subject> subjects;
 	
-	
+	public EducationalDetails()
+	{
+		subjects = new ArrayList<Subject>();
+		subjects.add(new Subject("Bengali","B",""));
+		subjects.add(new Subject("English","E",""));
+		subjects.add(new Subject("Maths","M",""));
+		subjects.add(new Subject("Physics","P",""));
+		subjects.add(new Subject("Chemistry","C",""));
+	}
+
 	
 	public String getEmail() {
 		return email;
@@ -93,35 +101,12 @@ public class EducationalDetails {
 	public void setPercentage10(String percentage10) {
 		this.percentage10 = percentage10;
 	}
-	public String getMarks1() {
-		return marks1;
+	
+	public List<Subject> getSubjects() {
+		return subjects;
 	}
-	public void setMarks1(String marks1) {
-		this.marks1 = marks1;
-	}
-	public String getMarks2() {
-		return marks2;
-	}
-	public void setMarks2(String marks2) {
-		this.marks2 = marks2;
-	}
-	public String getMarks3() {
-		return marks3;
-	}
-	public void setMarks3(String marks3) {
-		this.marks3 = marks3;
-	}
-	public String getMarks4() {
-		return marks4;
-	}
-	public void setMarks4(String marks4) {
-		this.marks4 = marks4;
-	}
-	public String getMarks5() {
-		return marks5;
-	}
-	public void setMarks5(String marks5) {
-		this.marks5 = marks5;
-	}	
 
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
 }

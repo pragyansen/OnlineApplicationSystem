@@ -10,80 +10,11 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-	<style type="text/css">
+	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
+	
 			
-		.noPadding {
-			padding: 0px;
-		}
 		
-		.noMargin {
-			margin: 0px;
-		}
-		
-		a, a:hover {
-			text-decoration : none;
-			color: inherit;
-		}
-		
-		
-		.mainContainer {
-			
-		}
-		
-		.header {
-			color: White;
-			font-size: 30px;
-			min-height: 75px;
-			background-color: #0070BA;
-			padding-top: 15px;
-			padding-left: 20px;
-		}
-		
-		.loginMdl {
-			margin-top: 20px;
-		/* 	border: 2px solid white; */
-			border-radius: 15px;
-			background-color: #DDDDDD;
-			padding-top: 20px;
-			padding-bottom: 20px;
-		}
-		
-		.loginMdlMsg {
-			font-size: 20px;
-			font-weight: bold;
-			text-align: center;
-		}
-		
-		
-		.formModel{
-			background-color: #DDDDDD;
-			padding-top: 25px;
-			padding-bottom: 20px;
-		}
-		
-		.dashboard-box{
-			min-height : 120px;
-			margin-top : 50px;
-			text-align : center;
-			padding-top : 35px;
-			padding-left : 10px;
-			padding-right : 10px;
-			font-size: 20px;
-			border-radius: 10px;
-		}
-		
-		.dashboard-infoBox{
-			min-height : 80px;
-			margin-top : 50px;
-			text-align : left;
-			padding-top : 20px;
-			font-size: 18px;
-			color: #444444;
-			border-radius: 5px;
-		}
-		
-	</style>
 	
 </head>
 <body> 
@@ -102,38 +33,42 @@
 		</div>
   	</div>
   	
-  	<div class="col-xs-10 col-xs-offset-1 loginMdl">
-    <div class="form-container">
+  	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 loginMdl">
+    <div class="row form-container">
         <div class="success">
             <c:forEach var="fileName" items="${fileNames}">
                 File  <strong>${fileName}</strong> uploaded successfully<br/>
-            </c:forEach>
-            <br/>
-        <div class="btn btn-success"><a href="../dashboard/">Back to Dashboard</a></div>
-    </div>
+            </c:forEach>        	
+    	</div>
     
-        <h2>Photo & Signature Upload</h2>
+        <h2>  Photo & Signature Upload</h2>
         <form:form method="POST" modelAttribute="multifile" enctype="multipart/form-data" class="form-horizontal" action="fileupload?${_csrf.parameterName}=${_csrf.token}">
+            <div class="col-xs-6 col-md-3 style="padding-bottom:20px">
                 <form:input type="file" path="photo.file" id="photo.file" class="form-control input-sm"/>
                 <div class="has-error">
                     <form:errors path="photo.file" class="help-inline"/>
                 </div>
+            </div>    
+            <div class="col-xs-6 col-md-3" style="padding-bottom:20px">
                  <form:input type="file" path="sign.file" class="form-control input-sm"/>
                 <div class="has-error">
                     <form:errors path="sign.file" class="help-inline"/>
                 </div>
-            <br/>
-            <div class="row">
+            </div>
+            <div class="col-xs-4 col-md-2">
                 <div class="form-actions floatRight">
-                    <input type="submit" value="Upload" class="btn btn-primary btn-sm">
+                    <input type="submit" value="Upload" class="btn btn-primary btn-block">
                 </div>
             </div>
+            <div class="btn btn-success"><a href="../dashboard/">Back to Dashboard</a></div>
         </form:form>
+        
     </div>
     
-    
-    <img src="getFile/getImage/photo" alt="car_image"/>
-    <img src="getFile/getImage/sign" alt="car_image"/>
+    <div class="row">
+	    <div class="col-xs-5 col-md-3 paddedbox"><img src="getFile/getImage/photo" alt="car_image"/></div>
+	    <div class="col-xs-5 col-md-3 paddedbox"><img src="getFile/getImage/sign" alt="car_image"/></div>
+    </div>
     </div>
     </div>
 </body>
