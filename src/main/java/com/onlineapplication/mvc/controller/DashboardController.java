@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.onlineapplication.model.EducationalDetails;
+import com.onlineapplication.mvc.bean.EducationalDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.service.StudentService;
 
@@ -76,15 +76,26 @@ public class DashboardController {
 	public String educationalDetailsSubmit(@Valid EducationalDetails educationalDetails, BindingResult result, Model model){
 		
 		educationalDetails.setEmail(SecurityContextHolder.getContext().getAuthentication().getName());
-		System.out.println(educationalDetails.getBoard12());
-		System.out.println(educationalDetails.getBoard10());
-		System.out.println(educationalDetails.getInstitution12());
-		System.out.println(educationalDetails.getMarks1());
-		System.out.println(educationalDetails.getEmail());
+//		System.out.println(educationalDetails.getBoard12());
+//		System.out.println(educationalDetails.getBoard10());
+//		System.out.println(educationalDetails.getInstitution12());
+//		System.out.println(educationalDetails.getMarks1());
+//		System.out.println(educationalDetails.getEmail());
+//		System.out.println(educationalDetails.getSubjects().get(0).getSubjectMarks());
+//		System.out.println(educationalDetails.getSubjects().get(1).getSubjectMarks());
+//		System.out.println(educationalDetails.getSubjects().get(2).getSubjectMarks());
+//		System.out.println(educationalDetails.getSubjects().get(3).getSubjectMarks());
+//		System.out.println(educationalDetails.getSubjects().get(4).getSubjectMarks());
+
 		
 //		boolean status = studentService.saveEducationalDetails(educationalDetails);
 		
 		return "redirect:/dashboard/";
 	}
-
+	
+	@RequestMapping(value = "/coursePicker", method=RequestMethod.GET)
+	public String coursePicker(){
+		return "coursePicker";
+	}
+	
 }

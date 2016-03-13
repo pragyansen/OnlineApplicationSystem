@@ -46,7 +46,7 @@
 		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="fileupload">C. Upload Photo and Signature</a></div>
 		  	</div>
 		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="">D. Apply for a Course</a></div>
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="coursePicker">D. Apply for a Course</a></div>
 		  	</div>
 	  	</div>
 	  	
