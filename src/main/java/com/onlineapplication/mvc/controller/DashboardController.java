@@ -93,5 +93,9 @@ public class DashboardController {
 		return "redirect:/dashboard/";
 	}
 	
+	@RequestMapping(value = "/coursePicker", method=RequestMethod.GET)
+	public String coursePicker(){
+		return "coursePicker";
+	}
 	
 }
