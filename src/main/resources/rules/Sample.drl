@@ -1,0 +1,12 @@
+package com.sample
+ 
+import com.onlineapplication.kie.model.Message;
+
+
+rule "PassFail"
+	when
+		m : Message( marksMap["MATH"] > 40)
+	then
+		System.out.println( "Pass" );
+		m.getSubjectList().add("Math Eligible");		
+end

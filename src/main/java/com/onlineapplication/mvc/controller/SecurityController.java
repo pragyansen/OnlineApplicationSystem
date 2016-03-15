@@ -2,11 +2,14 @@ package com.onlineapplication.mvc.controller;
 
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
+import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.onlineapplication.kie.model.Message;
 import com.onlineapplication.model.Student;
 import com.onlineapplication.mvc.bean.RegisterBean;
 import com.onlineapplication.mvc.validator.RegisterBeanValidator;
@@ -39,6 +43,16 @@ public class SecurityController {
 
 	@Autowired
 	MailService mailService;
+	
+	@Inject 
+	ApplicationContext context; 
+	
+	KieSession kieSession;
+	
+	@PostConstruct 
+	public void postConstruct(){ 
+	  kieSession = (KieSession) context.getBean("ksession1"); 
+	}
 
 	private static final Logger logger = Logger.getLogger(SecurityController.class);
 
@@ -99,6 +113,15 @@ public class SecurityController {
 	@RequestMapping(value = "/forgetPass/{type}", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<String> data(@PathVariable String type, @RequestBody Map myMap){
+		
+		System.out.println(context.getBean("ksession1"));
+		Message message = new Message();
+		message.getMarksMap().put("MATH",41);
+		//KieSession kSession = (KieSession) context.getBean("ksession1");
+		kieSession.insert(message);
+		kieSession.fireAllRules();
+		System.out.println(message.getSubjectList().get(0));
+		
 		logger.debug(type + " -- " + myMap.get("id"));
 		String id = (String) myMap.get("id");
 		if(null == id){
