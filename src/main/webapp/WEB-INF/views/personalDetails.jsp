@@ -5,7 +5,7 @@
 <html>
 <head>
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-	<title>Online Admission System</title>
+	<title>Personal Details - Online Admission System</title>
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- Bootstrap 3.3.2 -->
@@ -29,7 +29,7 @@
 				<a href="../login?logout">Log Out</a>
 			</div>
   		</div>
-		<div class="col-xs-12 formModel">
+		<div class="col-xs-12 col-md-8 col-md-offset-2 formModel">
 		<form:form class="form-horizontal" role="form" method="post" id="personalDetailsform" modelAttribute="personalBean">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			<div class="form-group col-xs-12 noPadding">
@@ -150,14 +150,14 @@
 					<form:input path="state" type="text" class="form-control"	placeholder="State"/>
 				</div>
 			</div>
-			<div class="form-group col-xs-12 noPadding">
-				<div class="col-md-2 col-md-offset-3">
-					<button type="submit" class="btn btn-primary btn-block">Submit</button>
+			<div class="form-group col-xs-12">
+					<div class="col-xs-5">
+						<button type="submit" class="btn btn-primary btn-block">Submit</button>
+					</div>
+					<div class="col-xs-6">
+						<button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Back to Dashboard</button>
+					</div>
 				</div>
-				<div class="col-md-2 col-md-offset-1 btn btn-success">
-					<a href="../dashboard/">Back to Dashboard</a>
-				</div>
-			</div>
 		</form:form>
 
 		</div>

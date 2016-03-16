@@ -5,6 +5,7 @@
 <html>
   <head>
     <jsp:include page="/WEB-INF/views/commons/csslinks.jsp" />
+    <title>Register - Online Admission System</title>
     
 </head>
   <body onload='document.loginForm.username.focus();'>
