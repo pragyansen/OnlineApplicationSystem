@@ -323,7 +323,12 @@
 			<artifactId>velocity</artifactId>
 			<version>1.7</version>
 		</dependency>
-				
+		<!-- Drools -->
+		<dependency>
+			 <groupId>org.kie</groupId>
+			 <artifactId>kie-spring</artifactId>
+			 <version>6.3.0.Final</version>
+		</dependency>
 
 	</dependencies>
 	<repositories>
