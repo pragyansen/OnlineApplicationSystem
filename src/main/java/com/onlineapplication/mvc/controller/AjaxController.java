@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.onlineapplication.mvc.bean.EducationalDetails;
-import com.onlineapplication.mvc.bean.Subject;
+import com.onlineapplication.model.EducationalDetails;
+import com.onlineapplication.model.Subject;
 
 @Controller
 @RequestMapping(value = "/ajax")

@@ -1,4 +1,4 @@
-package com.onlineapplication.mvc.bean;
+package com.onlineapplication.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +16,9 @@ public class EducationalDetails {
 	private String yearOfPassing12;
 	private String yearOfPassing10;
 	
+	private String marks12;
+	private String marks10;
+	
 	private String totalMarks12;
 	private String totalMarks10;
 	
@@ -27,11 +30,11 @@ public class EducationalDetails {
 	public EducationalDetails()
 	{
 		subjects = new ArrayList<Subject>();
-		subjects.add(new Subject("Bengali","B",""));
-		subjects.add(new Subject("English","E",""));
-		subjects.add(new Subject("Maths","M",""));
-		subjects.add(new Subject("Physics","P",""));
-		subjects.add(new Subject("Chemistry","C",""));
+		subjects.add(new Subject("Bengali","B","",""));
+		subjects.add(new Subject("English","E","",""));
+		subjects.add(new Subject("Maths","M","",""));
+		subjects.add(new Subject("Physics","P","",""));
+		subjects.add(new Subject("Chemistry","C","",""));
 	}
 
 	
@@ -77,6 +80,22 @@ public class EducationalDetails {
 	public void setYearOfPassing10(String yearOfPassing10) {
 		this.yearOfPassing10 = yearOfPassing10;
 	}
+	public String getMarks12() {
+		return marks12;
+	}
+
+	public void setMarks12(String marks12) {
+		this.marks12 = marks12;
+	}
+
+	public String getMarks10() {
+		return marks10;
+	}
+
+	public void setMarks10(String marks10) {
+		this.marks10 = marks10;
+	}
+
 	public String getTotalMarks12() {
 		return totalMarks12;
 	}

@@ -72,11 +72,11 @@
 					</div>					
 					
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="totalMarks10" class="control-form:label col-md-3">
+						<form:label path="Marks10" class="control-form:label col-md-3">
 					Marks Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="totalMarks10" type="text" class="form-control"
+							<form:input path="Marks10" type="text" class="form-control"
 								placeholder="400" />
 						</div>
 					</div>
@@ -96,7 +96,7 @@
 					Percentage<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="percentage10" type="text" class="form-control"
+							<form:input readonly="true" path="percentage10" type="text" class="form-control"
 								placeholder="80" />
 						</div>
 					</div>
@@ -140,11 +140,11 @@
 					</div>
 					
 					<div class="form-group col-xs-12 noPadding">
-						<form:label path="totalMarks12" class="control-form:label col-md-3">
+						<form:label path="Marks12" class="control-form:label col-md-3">
 					Marks Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="totalMarks12" type="text" class="form-control"
+							<form:input path="Marks12" type="text" class="form-control"
 								placeholder="400" />
 						</div>
 					</div>
@@ -164,7 +164,7 @@
 					Percentage<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="percentage12" type="text" class="form-control"
+							<form:input readonly="true" path="percentage12" type="text" class="form-control"
 								placeholder="80" />
 						</div>
 					</div>
@@ -173,13 +173,14 @@
 						individual subjects</div>
 
 					<c:forEach var="v" varStatus="vs" items="${educationalBean.subjects}">
-						<div class="form-group col-xs-12 col-sm-6 noPadding">
+						<div class="form-group col-xs-12 noPadding">
 							<form:label path=""
 								class="control-form:label col-md-3 sr-only">
 				Subject<span style="color: red;"> *</span>
 							</form:label>
-							<div class="col-xs-7 col-sm-6">
+							<div class="col-xs-11 col-md-3">
 								<form:select path="subjects[${vs.index}].subjectName" class="form-control">
+									<option value="" disabled selected>Subject</option>
 									<option>Bengali</option>
 									<option>English</option>
 									<option>Maths</option>
@@ -187,12 +188,13 @@
 									<option>Chemistry</option>
 								</form:select>
 							</div>
-							<div class="col-xs-2 noPadding">
+							<div class="col-xs-5 col-md-2">
 								<form:input path="subjects[${vs.index}].subjectMarks" type="text" class="form-control"
-									placeholder="80" />
+									placeholder="Obtained" />
 							</div>
-							<div class="col-xs-2 noPadding">
-							<form:input path="" type="text" class="form-control"/>
+							<div class="col-xs-6 col-md-2">
+							<form:input path="subjects[${vs.index}].subjectTotal" type="text" class="form-control"
+									placeholder="Out Of"/>
 							</div>
 						</div>
 					</c:forEach>

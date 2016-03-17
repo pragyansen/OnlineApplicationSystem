@@ -20,7 +20,7 @@
 		<logout logout-url="/login?logout"/>
 		<remember-me key="myAppKey" remember-me-parameter="rememberme" />
 		<session-management>
-			<concurrency-control max-sessions="1"
+			<concurrency-control max-sessions="2"
 				expired-url="/login" />
 		</session-management>
 	</http>
