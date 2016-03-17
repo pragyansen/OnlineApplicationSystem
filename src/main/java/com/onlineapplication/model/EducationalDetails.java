@@ -31,17 +31,7 @@ public class EducationalDetails {
 	private String percentage12;
 	private String percentage10;
 	
-	@ElementCollection
-	private List<Subject> subjects = new ArrayList<Subject>();;
-	
-	public EducationalDetails()
-	{
-		subjects.add(new Subject("Bengali","B","",""));
-		subjects.add(new Subject("English","E","",""));
-		subjects.add(new Subject("Maths","M","",""));
-		subjects.add(new Subject("Physics","P","",""));
-		subjects.add(new Subject("Chemistry","C","",""));
-	}
+	public EducationalDetails() {}
 
 	
 	public String getEmail() {
@@ -127,11 +117,144 @@ public class EducationalDetails {
 		this.percentage10 = percentage10;
 	}
 	
-	public List<Subject> getSubjects() {
-		return subjects;
+	private String subject1code;
+	private String subject1marks;
+	private String subject1total;
+	
+	private String subject2code;
+	private String subject2marks;
+	private String subject2total;
+	
+	private String subject3code;
+	private String subject3marks;
+	private String subject3total;
+	
+	private String subject4code;
+	private String subject4marks;
+	private String subject4total;
+	
+	private String subject5code;
+	private String subject5marks;
+	private String subject5total;
+	
+	
+	public String getSubject1code() {
+		return subject1code;
 	}
-
-	public void setSubjects(List<Subject> subjects) {
-		this.subjects = subjects;
+	
+	public void setSubject1code(String subject1code) {
+		this.subject1code = subject1code;
+	}
+	
+	public String getSubject1marks() {
+		return subject1marks;
+	}
+	
+	public void setSubject1marks(String subject1marks) {
+		this.subject1marks = subject1marks;
+	}
+	
+	public String getSubject1total() {
+		return subject1total;
+	}
+	
+	public void setSubject1total(String subject1total) {
+		this.subject1total = subject1total;
+	}
+	
+	public String getSubject2code() {
+		return subject2code;
+	}
+	
+	public void setSubject2code(String subject2code) {
+		this.subject2code = subject2code;
+	}
+	
+	public String getSubject2marks() {
+		return subject2marks;
+	}
+	
+	public void setSubject2marks(String subject2marks) {
+		this.subject2marks = subject2marks;
+	}
+	
+	public String getSubject2total() {
+		return subject2total;
+	}
+	
+	public void setSubject2total(String subject2total) {
+		this.subject2total = subject2total;
+	}
+	
+	public String getSubject3code() {
+		return subject3code;
+	}
+	
+	public void setSubject3code(String subject3code) {
+		this.subject3code = subject3code;
+	}
+	
+	public String getSubject3marks() {
+		return subject3marks;
+	}
+	
+	public void setSubject3marks(String subject3marks) {
+		this.subject3marks = subject3marks;
+	}
+	
+	public String getSubject3total() {
+		return subject3total;
+	}
+	
+	public void setSubject3total(String subject3total) {
+		this.subject3total = subject3total;
+	}
+	
+	public String getSubject4code() {
+		return subject4code;
+	}
+	
+	public void setSubject4code(String subject4code) {
+		this.subject4code = subject4code;
+	}
+	
+	public String getSubject4marks() {
+		return subject4marks;
+	}
+	
+	public void setSubject4marks(String subject4marks) {
+		this.subject4marks = subject4marks;
+	}
+	
+	public String getSubject4total() {
+		return subject4total;
+	}
+	
+	public void setSubject4total(String subject4total) {
+		this.subject4total = subject4total;
+	}
+	
+	public String getSubject5code() {
+		return subject5code;
+	}
+	
+	public void setSubject5code(String subject5code) {
+		this.subject5code = subject5code;
+	}
+	
+	public String getSubject5marks() {
+		return subject5marks;
+	}
+	
+	public void setSubject5marks(String subject5marks) {
+		this.subject5marks = subject5marks;
+	}
+	
+	public String getSubject5total() {
+		return subject5total;
+	}
+	
+	public void setSubject5total(String subject5total) {
+		this.subject5total = subject5total;
 	}
 }

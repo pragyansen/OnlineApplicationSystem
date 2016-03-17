@@ -172,32 +172,110 @@
 					<div class="form-group col-xs-12 h4">Enter marks obtained and total marks for
 						individual subjects</div>
 
-					<c:forEach var="v" varStatus="vs" items="${educationalBean.subjects}">
 						<div class="form-group col-xs-12 noPadding">
-							<form:label path=""
+							<form:label path="subject1marks"
 								class="control-form:label col-md-3 sr-only">
 				Subject<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-11 col-md-3">
-								<form:select path="subjects[${vs.index}].subjectName" class="form-control">
-									<option value="" disabled selected>Subject</option>
-									<option>Bengali</option>
-									<option>English</option>
-									<option>Maths</option>
-									<option>Physics</option>
-									<option>Chemistry</option>
+								<form:select path="subject1code" class="form-control" required="true">
+									<form:option value="0" disabled="true" selected="true">Subject</form:option>
+									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
 								</form:select>
 							</div>
 							<div class="col-xs-5 col-md-2">
-								<form:input path="subjects[${vs.index}].subjectMarks" type="text" class="form-control"
+								<form:input path="subject1marks" type="text" class="form-control"
 									placeholder="Obtained" />
 							</div>
 							<div class="col-xs-6 col-md-2">
-							<form:input path="subjects[${vs.index}].subjectTotal" type="text" class="form-control"
+							<form:input path="subject1total" type="text" class="form-control"
 									placeholder="Out Of"/>
 							</div>
 						</div>
-					</c:forEach>
+						
+						<div class="form-group col-xs-12 noPadding">
+							<form:label path="subject2marks"
+								class="control-form:label col-md-3 sr-only">
+				Subject<span style="color: red;"> *</span>
+							</form:label>
+							<div class="col-xs-11 col-md-3">
+								<form:select path="subject2code" class="form-control" required="true">
+									<form:option value="0" disabled="true" selected="true">Subject</form:option>
+									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
+								</form:select>
+							</div>
+							<div class="col-xs-5 col-md-2">
+								<form:input path="subject2marks" type="text" class="form-control"
+									placeholder="Obtained" />
+							</div>
+							<div class="col-xs-6 col-md-2">
+							<form:input path="subject2total" type="text" class="form-control"
+									placeholder="Out Of"/>
+							</div>
+						</div>
+						
+						<div class="form-group col-xs-12 noPadding">
+							<form:label path="subject3marks"
+								class="control-form:label col-md-3 sr-only">
+				Subject<span style="color: red;"> *</span>
+							</form:label>
+							<div class="col-xs-11 col-md-3">
+								<form:select path="subject3code" class="form-control" required="true">
+									<form:option value="0" disabled="true" selected="true">Subject</form:option>
+									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
+								</form:select>
+							</div>
+							<div class="col-xs-5 col-md-2">
+								<form:input path="subject3marks" type="text" class="form-control"
+									placeholder="Obtained" />
+							</div>
+							<div class="col-xs-6 col-md-2">
+							<form:input path="subject3total" type="text" class="form-control"
+									placeholder="Out Of"/>
+							</div>
+						</div>
+						
+						<div class="form-group col-xs-12 noPadding">
+							<form:label path="subject4marks"
+								class="control-form:label col-md-3 sr-only">
+				Subject<span style="color: red;"> *</span>
+							</form:label>
+							<div class="col-xs-11 col-md-3">
+								<form:select path="subject4code" class="form-control" required="true">
+									<form:option value="0" disabled="true" selected="true">Subject</form:option>
+									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
+								</form:select>
+							</div>
+							<div class="col-xs-5 col-md-2">
+								<form:input path="subject4marks" type="text" class="form-control"
+									placeholder="Obtained" />
+							</div>
+							<div class="col-xs-6 col-md-2">
+							<form:input path="subject4total" type="text" class="form-control"
+									placeholder="Out Of"/>
+							</div>
+						</div>
+						
+						<div class="form-group col-xs-12 noPadding">
+							<form:label path="subject5marks"
+								class="control-form:label col-md-3 sr-only">
+				Subject<span style="color: red;"> *</span>
+							</form:label>
+							<div class="col-xs-11 col-md-3">
+								<form:select path="subject5code" class="form-control" required="true">
+									<form:option value="0" disabled="true" selected="true">Subject</form:option>
+									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
+								</form:select>
+							</div>
+							<div class="col-xs-5 col-md-2">
+								<form:input path="subject5marks" type="text" class="form-control"
+									placeholder="Obtained" />
+							</div>
+							<div class="col-xs-6 col-md-2">
+							<form:input path="subject5total" type="text" class="form-control"
+									placeholder="Out Of"/>
+							</div>
+						</div>
 
 <!-- 				</div> -->
 				
