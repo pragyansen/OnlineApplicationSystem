@@ -1,18 +1,20 @@
-package com.onlineapplication.mvc.bean;
+package com.onlineapplication.model;
 
 public class Subject{
 
 	private String subjectName;
 	private String subjectCode;
-	private String SubjectMarks;
+	private String subjectMarks;
+	private String subjectTotal;
 	
 	public Subject() {}
 	
-	public Subject(String subjectName, String subjectCode, String subjectMarks)
+	public Subject(String subjectName, String subjectCode, String subjectMarks, String subjectTotal)
 	{
 		this.subjectName = subjectName;
 		this.subjectCode = subjectCode;
-		this.SubjectMarks = subjectMarks;
+		this.subjectMarks = subjectMarks;
+		this.subjectTotal = subjectTotal;
 	}
 
 	public String getSubjectName() {
@@ -32,11 +34,19 @@ public class Subject{
 	}
 
 	public String getSubjectMarks() {
-		return SubjectMarks;
+		return subjectMarks;
 	}
 
 	public void setSubjectMarks(String subjectMarks) {
-		SubjectMarks = subjectMarks;
+		subjectMarks = subjectMarks;
+	}
+	
+	public String getSubjectTotal() {
+		return subjectTotal;
+	}
+
+	public void setSubjectTotal(String subjectMarks) {
+		subjectTotal = subjectTotal;
 	}
 	
 	

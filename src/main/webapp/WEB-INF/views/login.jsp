@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
   <head>
+  <title>Login - Online Admission System</title>
     <jsp:include page="/WEB-INF/views/commons/csslinks.jsp" />
     <link href="resources/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
@@ -53,7 +54,7 @@
 	    <form name="loginForm" action="<c:url value='j_spring_security_check' />" method="post">
            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="<spring:message code="login.input.user"/>" name="username">
+            <input type="email" class="form-control" placeholder="<spring:message code="login.input.user"/>" name="username">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">

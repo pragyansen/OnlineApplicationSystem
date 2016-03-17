@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.onlineapplication.mvc.bean.EducationalDetails;
+import com.onlineapplication.model.EducationalDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.service.StudentService;
 

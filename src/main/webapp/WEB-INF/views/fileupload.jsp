@@ -5,7 +5,7 @@
 <html>
  
 <head>
-    <title>Photo & Signature Upload</title>
+    <title>Photo & Signature Upload - Online Admission System</title>
     
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,23 +44,26 @@
         <h2>  Photo & Signature Upload</h2>
         <form:form method="POST" modelAttribute="multifile" enctype="multipart/form-data" class="form-horizontal" action="fileupload?${_csrf.parameterName}=${_csrf.token}">
             <div class="col-xs-6 col-md-3 style="padding-bottom:20px">
-                <form:input type="file" path="photo.file" id="photo.file" class="form-control input-sm"/>
+                <form:input type="file" path="photo.file" id="photo.file" class="form-control input-sm" style="min-height:42px"/>
                 <div class="has-error">
                     <form:errors path="photo.file" class="help-inline"/>
                 </div>
             </div>    
             <div class="col-xs-6 col-md-3" style="padding-bottom:20px">
-                 <form:input type="file" path="sign.file" class="form-control input-sm"/>
+                 <form:input type="file" path="sign.file" class="form-control input-sm" style="min-height:42px"/>
                 <div class="has-error">
                     <form:errors path="sign.file" class="help-inline"/>
                 </div>
             </div>
-            <div class="col-xs-4 col-md-2">
+            <div class="col-xs-5 col-md-2">
                 <div class="form-actions floatRight">
                     <input type="submit" value="Upload" class="btn btn-primary btn-block">
                 </div>
             </div>
-            <div class="btn btn-success"><a href="../dashboard/">Back to Dashboard</a></div>
+            <div class="col-xs-6 col-md-3">
+            <button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Back to Dashboard</button>
+        	</div>
+        	
         </form:form>
         
     </div>
