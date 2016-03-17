@@ -33,23 +33,17 @@
 				<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
 				Total Student Register <b>555</b>
 		</div>
-		<div class="col-xs-12 alert-success noPadding chartContainer">
-			<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-				Student Status Report
-			</div>
-	  		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-				<div style="height: 100%" id="statusChart"></div>
-	  		</div>
-		</div>
+				
+  		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 chartContainer">
+  			Student Status Report
+			<div style="height: 100%" id="statusChart"></div>
+  		</div>
 		
-  		<div class="col-xs-12 alert-success noPadding chartContainer">
-			<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-				Subject Status Report
-			</div>
-	  		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-				<div style="height: 100%" id="subjectChart"></div>
-	  		</div>
-		</div>
+  		
+  		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 chartContainer">
+  			Subject Status Report
+			<div style="height: 100%" id="subjectChart"></div>
+  		</div>
 	</div>
 	<!-- jQuery 2.1.3 -->
 	<script	src="../resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
