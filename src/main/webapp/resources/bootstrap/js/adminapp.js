@@ -1,14 +1,11 @@
-function drawChart(){
+function drawChart(elementId, chartData){
+	//console.log(elementId);
+	//console.log(chartData);
 	Morris.Donut({
-		element: 'statusChart',
-		data: [
-		       {label: "Personal Details", value: 12},
-		       {label: "Educational Detais", value: 30},
-		       {label: "Corse Selection", value: 20},
-		       {label: "Payment Received", value: 30}
-		       ],
+		element: elementId,
+		data: chartData,
 //		       colors: ["#ff3333", "#6666ff", "#ffff33"]
-	});
+	});/*
 	Morris.Donut({
 		element: 'subjectChart',
 		data: [
@@ -20,14 +17,33 @@ function drawChart(){
 		       {label: "Pass", value: 0}
 		       ],
 //		       colors: ["#ff3333", "#6666ff", "#ffff33"]
-	});
+	});*/
 }
 
 $( document ).ready(function() {
-	drawChart();
-
+	
+	var statusChartData = [];
+	var subjectChartData = [];
+	
+	$.ajax({
+		type : 'GET',
+		async : true,
+		url : '../ajax/chartData',
+		headers : {
+			'Content-Type':'application/json'
+		},
+		success: function(response){
+			statusChartData = response[0];
+			subjectChartData = response[1];
+			drawChart(statusChart, statusChartData);
+			drawChart(subjectChart, subjectChartData);
+			//alert(response);
+		}
+	});
+	$(window).resize(function() {
+		drawChart(statusChart, statusChartData);
+		drawChart(subjectChart, subjectChartData);
+	});
 });
 
-$(window).resize(function() {
-	drawChart();
-});
+
