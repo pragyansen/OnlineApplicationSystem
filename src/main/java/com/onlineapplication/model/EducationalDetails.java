@@ -3,8 +3,14 @@ package com.onlineapplication.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class EducationalDetails {
 	
+	@Id
 	private String email;
 	
 	private String institution12;
@@ -25,11 +31,11 @@ public class EducationalDetails {
 	private String percentage12;
 	private String percentage10;
 	
-	private List<Subject> subjects;
+	@ElementCollection
+	private List<Subject> subjects = new ArrayList<Subject>();;
 	
 	public EducationalDetails()
 	{
-		subjects = new ArrayList<Subject>();
 		subjects.add(new Subject("Bengali","B","",""));
 		subjects.add(new Subject("English","E","",""));
 		subjects.add(new Subject("Maths","M","",""));

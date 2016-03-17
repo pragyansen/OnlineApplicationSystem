@@ -76,19 +76,8 @@ public class DashboardController {
 	public String educationalDetailsSubmit(@Valid EducationalDetails educationalDetails, BindingResult result, Model model){
 		
 		educationalDetails.setEmail(SecurityContextHolder.getContext().getAuthentication().getName());
-//		System.out.println(educationalDetails.getBoard12());
-//		System.out.println(educationalDetails.getBoard10());
-//		System.out.println(educationalDetails.getInstitution12());
-//		System.out.println(educationalDetails.getMarks1());
-//		System.out.println(educationalDetails.getEmail());
-//		System.out.println(educationalDetails.getSubjects().get(0).getSubjectMarks());
-//		System.out.println(educationalDetails.getSubjects().get(1).getSubjectMarks());
-//		System.out.println(educationalDetails.getSubjects().get(2).getSubjectMarks());
-//		System.out.println(educationalDetails.getSubjects().get(3).getSubjectMarks());
-//		System.out.println(educationalDetails.getSubjects().get(4).getSubjectMarks());
-
-		
-//		boolean status = studentService.saveEducationalDetails(educationalDetails);
+		System.out.println(educationalDetails.getBoard12());
+		boolean status = studentService.saveEducationalDetails(educationalDetails);
 		
 		return "redirect:/dashboard/";
 	}

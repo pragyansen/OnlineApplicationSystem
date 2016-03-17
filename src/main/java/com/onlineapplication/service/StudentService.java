@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
 import com.onlineapplication.dao.StudentDao;
+import com.onlineapplication.model.EducationalDetails;
 import com.onlineapplication.model.FileDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Student;
@@ -66,6 +67,19 @@ public class StudentService {
 
 	public PersonalDetails fetchPersonalDetails(String email) {
 		return studentDao.findPerosnalDetail(email);
+	}
+	
+	public boolean saveEducationalDetails(EducationalDetails educationalDetails) {
+		try{
+			studentDao.saveEducationalDetils(educationalDetails);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+
+	public EducationalDetails fetchEducationalDetails(String email) {
+		return studentDao.findEducationalDetail(email);
 	}
 
 	public boolean saveNewFileDetails(MultiFile multiFileBucket, String email) {

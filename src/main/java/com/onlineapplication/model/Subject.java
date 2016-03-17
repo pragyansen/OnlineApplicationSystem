@@ -1,7 +1,19 @@
 package com.onlineapplication.model;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+//@Entity
+@Embeddable
 public class Subject{
 
+/*	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;*/
+	
 	private String subjectName;
 	private String subjectCode;
 	private String subjectMarks;
@@ -38,7 +50,7 @@ public class Subject{
 	}
 
 	public void setSubjectMarks(String subjectMarks) {
-		subjectMarks = subjectMarks;
+		this.subjectMarks = subjectMarks;
 	}
 	
 	public String getSubjectTotal() {
@@ -46,8 +58,16 @@ public class Subject{
 	}
 
 	public void setSubjectTotal(String subjectMarks) {
-		subjectTotal = subjectTotal;
+		this.subjectTotal = subjectTotal;
 	}
+
+//	public long getId() {
+//		return id;
+//	}
+//
+//	public void setId(long id) {
+//		this.id = id;
+//	}
 	
 	
 }
