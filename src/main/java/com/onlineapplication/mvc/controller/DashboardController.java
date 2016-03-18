@@ -10,7 +10,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,7 +32,7 @@ public class DashboardController {
 	}
 	
 	
-	@ModelAttribute("personalBean")
+/*	@ModelAttribute("personalBean")
 	public PersonalDetails createPerosnalBean() {
 		PersonalDetails personalBean = null;
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -42,12 +41,24 @@ public class DashboardController {
 			personalBean = new PersonalDetails();
 		personalBean.setName(studentService.fetchStudentByEmail(email).getName());
 		return personalBean;
-	}
+	}*/
 		
 	
 	@RequestMapping(value = "/personalDetails", method=RequestMethod.GET)
-	public String personalDetails(){
-		return "personalDetails";
+	public ModelAndView personalDetails(){
+		ModelAndView modelView = new ModelAndView();
+		
+		PersonalDetails personalBean = null;
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		personalBean = studentService.fetchPersonalDetails(email);
+		if(null == personalBean)
+			personalBean = new PersonalDetails();
+		personalBean.setName(studentService.fetchStudentByEmail(email).getName());
+		
+		modelView.addObject("personalBean", personalBean);
+		
+		modelView.setViewName("personalDetails");
+		return modelView;
 	}
 	
 	@RequestMapping(value = "/personalDetails", method=RequestMethod.POST)
@@ -61,7 +72,7 @@ public class DashboardController {
 	}
 	
 		
-	@ModelAttribute("educationalBean")
+/*	@ModelAttribute("educationalBean")
 	public EducationalDetails createEducationalBean() {
 		EducationalDetails educationalBean = new EducationalDetails();
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -69,11 +80,19 @@ public class DashboardController {
 		if(null == educationalBean)
 			educationalBean = new EducationalDetails();
 		return educationalBean;
-	}
+	}*/
 	
 	@RequestMapping(value = "/educationalDetails", method=RequestMethod.GET)
 	public ModelAndView educationalDetails(){
 		ModelAndView modelView = new ModelAndView();
+		
+		EducationalDetails educationalBean = new EducationalDetails();
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		educationalBean = studentService.fetchEducationalDetails(email);
+		if(null == educationalBean)
+			educationalBean = new EducationalDetails();
+		modelView.addObject("educationalBean", educationalBean);
+		
 		
 		List<Subject> subjectList = new ArrayList<Subject>();
 		Subject sub1 = new Subject();
