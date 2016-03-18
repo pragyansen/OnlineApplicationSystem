@@ -36,13 +36,13 @@
 				
   		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 chartContainer">
   			Student Status Report
-			<div style="height: 100%" id="statusChart"></div>
+			<div style="height: auto;" id="statusChart"></div>
   		</div>
 		
   		
   		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 chartContainer">
   			Subject Status Report
-			<div style="height: 100%" id="subjectChart"></div>
+			<div style="height: auto;" id="subjectChart"></div>
   		</div>
 	</div>
 	<!-- jQuery 2.1.3 -->
