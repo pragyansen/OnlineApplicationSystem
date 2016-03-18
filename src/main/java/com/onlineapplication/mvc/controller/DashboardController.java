@@ -93,7 +93,6 @@ public class DashboardController {
 			educationalBean = new EducationalDetails();
 		modelView.addObject("educationalBean", educationalBean);
 		
-		
 		List<Subject> subjectList = new ArrayList<Subject>();
 		Subject sub1 = new Subject();
 		sub1.setSubjectCode("PHY");
