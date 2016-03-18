@@ -124,13 +124,13 @@ public class SecurityController {
 	@ResponseBody
 	public ResponseEntity<String> data(@PathVariable String type, @RequestBody Map myMap){
 		
-		System.out.println(context.getBean("ksession1"));
+/*		System.out.println(context.getBean("ksession1"));
 		Message message = new Message();
 		message.getMarksMap().put("MATH",41);
 		//KieSession kSession = (KieSession) context.getBean("ksession1");
 		kieSession.insert(message);
 		kieSession.fireAllRules();
-		System.out.println(message.getSubjectList().get(0));
+		System.out.println(message.getSubjectList().get(0));*/
 		
 		logger.debug(type + " -- " + myMap.get("id"));
 		String id = (String) myMap.get("id");

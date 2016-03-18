@@ -17,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.onlineapplication.model.EducationalDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Subject;
+import com.onlineapplication.mvc.bean.Course;
+import com.onlineapplication.service.RuleService;
 import com.onlineapplication.service.StudentService;
 
 @Controller
@@ -25,6 +27,9 @@ public class DashboardController {
 	
 	@Autowired
 	StudentService studentService;
+	
+	@Autowired
+	RuleService ruleService;
 
 	@RequestMapping(value = "/", method=RequestMethod.GET)
 	public String home(){
@@ -137,8 +142,15 @@ public class DashboardController {
 	}
 	
 	@RequestMapping(value = "/coursePicker", method=RequestMethod.GET)
-	public String coursePicker(){
-		return "coursePicker";
+	public ModelAndView coursePicker(){
+		List<Course> courses = ruleService.invokeRuleSet(SecurityContextHolder.getContext().getAuthentication().getName());
+		ModelAndView modelView = new ModelAndView();
+		modelView.addObject("courseList",courses);
+		
+		modelView.addObject("educationalDetails",new EducationalDetails());
+		
+		modelView.setViewName("coursePicker");
+		return modelView;
 	}
 	
 }

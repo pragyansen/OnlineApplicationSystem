@@ -40,51 +40,17 @@
 	
 	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 loginMdl">
 		<div class="col-xs-3">
-			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn">1. Select a
-					Stream</button>
-				<div id="myDropdown" class="dropdown-content">
-					<a href="javascript:arts()">Arts</a> <a
-						href="javascript:commerce()">Commerce</a> <a
-						href="javascript:science()">Science</a>
-				</div>
-			</div>
+			<form:form method="post" modelAttribute="educationalDetails">
+				<form:checkboxes items="${courseList}" itemValue="courseCode" itemLabel="courseName" path="board10"/>
+			
+			</form:form>
 		</div>
 
-		<div class="col-xs-3" id="arts" style="display: none">
-			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn">2. Select a
-					Subject</button>
-				<div id="myDropdown" class="dropdown-content">
-					<a href="#">Bengali</a> <a
-						href="#">English</a>
-				</div>
-			</div>
-		</div>
 		
-		<div class="col-xs-3" id="commerce" style="display: none">
-			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn">2. Select a
-					Subject</button>
-				<div id="myDropdown" class="dropdown-content">
-					<a href="#">Accountancy</a> <a
-						href="#">BEBM</a>
-				</div>
-			</div>
-		</div>
 		
-		<div class="col-xs-3" id="science" style="display: none">
-			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn">2. Select a
-					Subject</button>
-				<div id="myDropdown" class="dropdown-content">
-					<a href="#">Chemistry</a> <a
-						href="#">Computer Science</a> <a
-						href="#">Maths</a> <a
-						href="#">Physics</a>
-				</div>
-			</div>
-		</div>
+		
+		
+		
 
 	</div>
 </body>
