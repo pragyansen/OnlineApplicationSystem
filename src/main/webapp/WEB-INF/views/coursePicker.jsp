@@ -29,20 +29,33 @@
 	</div>
 	
 	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 loginMdl">
-		<div class="col-xs-3">
-			<form:form method="post" modelAttribute="educationalDetails">
-				<form:checkboxes items="${courseList}" itemValue="courseCode" itemLabel="courseName" path="board10"/>
+
+			<h2>Select Course(s) to apply</h2>
+			<br>
 			
+			<form:form method="post" modelAttribute="educationalDetails">
+
+				<c:forEach var="v" varStatus="vs" items="${courseList}">
+			
+					<form:label path=""	class="control-form:label col-md-3 sr-only">Subject</form:label>
+					<div class="col-md-7 h4 bg-info">
+						<form:checkbox style="margin:10px" path="percentage10" value="courseList[${vs.index}].courseCode" label="${courseList[vs.index].courseName}"/>
+					</div>
+				
+			</c:forEach>
+			
+			<div class="form-group col-xs-12">
+				<div class="col-md-3">
+					<button type="submit" class="btn btn-primary btn-block">Submit</button>
+				</div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Cancel</button>
+				</div>
+			</div>
+				
 			</form:form>
 		</div>
 
-		
-		
-		
-		
-		
-
-	</div>
 </body>
 
 
