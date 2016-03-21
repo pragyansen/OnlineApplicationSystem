@@ -1,20 +1,17 @@
 package com.onlineapplication.service;
 
-import java.io.File;
-
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.FileCopyUtils;
 
 import com.onlineapplication.dao.StudentDao;
+import com.onlineapplication.model.CourseDetails;
 import com.onlineapplication.model.EducationalDetails;
 import com.onlineapplication.model.FileDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Student;
 import com.onlineapplication.mvc.bean.MultiFile;
 import com.onlineapplication.mvc.bean.RegisterBean;
-import com.onlineapplication.mvc.bean.SingleFile;
 
 @Service
 public class StudentService {
@@ -80,6 +77,19 @@ public class StudentService {
 
 	public EducationalDetails fetchEducationalDetails(String email) {
 		return studentDao.findEducationalDetail(email);
+	}
+	
+	public boolean saveCourseDetails(CourseDetails courseDetails) {
+		try{
+			studentDao.saveCourseDetils(courseDetails);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+	
+	public CourseDetails fetchCourseDetails(String email) {
+		return studentDao.findCourseDetail(email);
 	}
 
 	public boolean saveNewFileDetails(MultiFile multiFileBucket, String email) {

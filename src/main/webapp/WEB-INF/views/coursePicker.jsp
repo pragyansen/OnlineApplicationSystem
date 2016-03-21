@@ -5,7 +5,7 @@
 <html>
 <head>
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-	<title>Online Admission System</title>
+	<title>Apply for a Course - Online Admission System</title>
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- Bootstrap 3.3.2 -->
@@ -33,13 +33,12 @@
 			<h2>Select Course(s) to apply</h2>
 			<br>
 			
-			<form:form method="post" modelAttribute="educationalDetails">
+			<form:form method="post" modelAttribute="courseDetails">
 
 				<c:forEach var="v" varStatus="vs" items="${courseList}">
-			
-					<form:label path=""	class="control-form:label col-md-3 sr-only">Subject</form:label>
+					<form:label path="courseCodes[${vs.index}]" class="control-form:label col-md-3 sr-only">Subject</form:label>
 					<div class="col-md-7 h4 bg-info">
-						<form:checkbox style="margin:10px" path="percentage10" value="courseList[${vs.index}].courseCode" label="${courseList[vs.index].courseName}"/>
+						<form:checkbox style="margin:10px" path="courseCodes[${vs.index}]" value="${courseList[vs.index].courseCode}" label="${courseList[vs.index].courseName}"/>
 					</div>
 				
 			</c:forEach>
@@ -54,6 +53,7 @@
 			</div>
 				
 			</form:form>
+			
 		</div>
 
 </body>

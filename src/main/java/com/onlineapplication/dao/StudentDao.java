@@ -10,6 +10,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.onlineapplication.model.CourseDetails;
 import com.onlineapplication.model.EducationalDetails;
 import com.onlineapplication.model.FileDetails;
 import com.onlineapplication.model.PersonalDetails;
@@ -70,6 +71,21 @@ public class StudentDao {
 	public EducationalDetails findEducationalDetail(String email) {
 		if (email == null) return null;
 		return entityManager.find(EducationalDetails.class, email);
+	}
+	
+	@Transactional
+	public void saveCourseDetils(CourseDetails courseDetails) {
+		if(null != findEducationalDetail(courseDetails.getEmail())){
+			this.entityManager.merge(courseDetails);
+			this.entityManager.flush();
+		} else {
+			this.entityManager.persist(courseDetails);
+		}
+	}
+	
+	public CourseDetails findCourseDetail(String email) {
+		if (email == null) return null;
+		return entityManager.find(CourseDetails.class, email);
 	}
 
 	@Transactional

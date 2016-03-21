@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.onlineapplication.model.CourseDetails;
 import com.onlineapplication.model.EducationalDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Subject;
@@ -147,10 +148,24 @@ public class DashboardController {
 		ModelAndView modelView = new ModelAndView();
 		modelView.addObject("courseList",courses);
 		
-		modelView.addObject("educationalDetails",new EducationalDetails());
-		
+		CourseDetails courseDetails = new CourseDetails();
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		courseDetails = studentService.fetchCourseDetails(email);
+		if(null == courseDetails)
+			courseDetails = new CourseDetails();
+		modelView.addObject("courseDetails", courseDetails);
+			
 		modelView.setViewName("coursePicker");
 		return modelView;
+	}
+	
+	@RequestMapping(value = "/coursePicker", method=RequestMethod.POST)
+	public String courseDetailsSubmit(@Valid CourseDetails courseDetails, BindingResult result, Model model){
+		
+		courseDetails.setEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+		boolean status = studentService.saveCourseDetails(courseDetails);
+		
+		return "redirect:/dashboard/";
 	}
 	
 }
