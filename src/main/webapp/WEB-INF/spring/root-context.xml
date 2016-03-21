@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
-		http://drools.org/schema/kie-spring https://raw.github.com/droolsjbpm/droolsjbpm-integration/master/kie-spring/src/main/resources/org/kie/spring/kie-spring-6.0.0.xsd">
+		http://drools.org/schema/kie-spring http://drools.org/schema/kie-spring.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<context:property-placeholder location="classpath*:META-INF/*.properties" />
