@@ -33,8 +33,26 @@ public class DashboardController {
 	RuleService ruleService;
 
 	@RequestMapping(value = "/", method=RequestMethod.GET)
-	public String home(){
-		return "dashboard";
+	public ModelAndView home() {
+		 
+		String text = "";
+		
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		CourseDetails courseDetails = new CourseDetails();
+		courseDetails = studentService.fetchCourseDetails(email);
+		if(null == courseDetails)
+		{
+			text = "You have not applied to any course(s) yet. Once you do, the details will show up here";
+		}
+		else
+		{
+			text = "Work in progress.";
+		}
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("text",text);
+		mv.setViewName("dashboard");
+		
+		return mv;
 	}
 	
 	
@@ -165,7 +183,41 @@ public class DashboardController {
 		courseDetails.setEmail(SecurityContextHolder.getContext().getAuthentication().getName());
 		boolean status = studentService.saveCourseDetails(courseDetails);
 		
-		return "redirect:/dashboard/";
+		return "redirect:/dashboard/application-form";
 	}
 	
+	@RequestMapping(value = "/application-form", method=RequestMethod.GET)
+	public ModelAndView applicationForm() {
+		 
+		String text = "";
+		
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		CourseDetails courseDetails = studentService.fetchCourseDetails(email);
+		
+		ModelAndView modelAndView = new ModelAndView("application-form");
+		if(null == courseDetails)
+		{
+			text = "You have not applied to any course(s) yet. Once you do, the details will show up here";
+		}
+		else
+		{
+			
+			
+			PersonalDetails personalBean = studentService.fetchPersonalDetails(email);
+			System.out.println(personalBean.getName());
+			
+			EducationalDetails educationalBean = studentService.fetchEducationalDetails(email);
+			
+			modelAndView.addObject("personalDetails", personalBean);
+			modelAndView.addObject("educationalDetails", educationalBean);
+			modelAndView.addObject("courseDetails", courseDetails);
+			
+			String name = personalBean.getName();
+			System.out.println(personalBean.getName());
+//			modelAndView.addObject("name", name);
+			
+			text = "Work in progress.";
+		}
+		return modelAndView;
+	}
 }

@@ -11,13 +11,8 @@
 	<!-- Bootstrap 3.3.2 -->
 	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="../resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
-	<!-- 	Dropdown menu -->
-	<link href="../resources/bootstrap/css/dropdown.css" rel="stylesheet" type="text/css" />
-
-	<script src="<c:url value="../resources/bootstrap/js/coursePicker.js" />"></script>
-	
-	
-<title>Pick a Course : Online Admission System</title>
+			
+	<title>Pick a Course : Online Admission System</title>
 
 </head>
 
@@ -30,7 +25,7 @@
 	
 	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 loginMdl">
 
-			<h2>Select Course(s) to apply</h2>
+			<h2 id="label1"></h2>
 			<br>
 			
 			<form:form method="post" modelAttribute="courseDetails">

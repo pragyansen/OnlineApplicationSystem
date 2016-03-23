@@ -11,6 +11,7 @@
 	<!-- Bootstrap 3.3.2 -->
 	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="../resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 
 </head>
 <body>
@@ -18,10 +19,33 @@
 	
 	<jsp:include page="header.jsp"/>
 	
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h3 class="modal-title text-center">Course Details</h3>
+	      </div>
+	      <div class="modal-body">
+	        ${text}
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	
+	  </div>
+	</div>
+	
   	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 loginMdl">
 	  	
 	  	<div class="row">
-		  	<div class = "col-xs-12 col-md-10 col-md-offset-1 bg-success dashboard-infoBox">Once you apply for a course, it's status will appear here</div>
+		  	<div class = "col-xs-12 col-md-10 col-md-offset-1 bg-success dashboard-infoBox">
+		  	Details regarding the courses you've applied for can be found
+		  	<a href="" data-toggle="modal" data-target="#myModal"><span style="color:blue"> here</span></a>
+		  	</div>
 		  	
 	  	</div>
 	  		  	
@@ -47,6 +71,9 @@
 		  	
 	  	</div>
 	  	
+<!-- 	  	<button onclick="myFunction()">Print this page</button> -->
+	  	
+	        
   	</div>
 </div>
 
@@ -55,5 +82,11 @@
 	<script	src="../resources/plugins/jQueryUI/jquery-ui.min.js"></script>
 	<!-- Bootstrap 3.3.2 JS -->
 	<script	src="../resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script>
+function myFunction() {
+    window.print();
+}
+</script>
+		
 </body>
 </html>
