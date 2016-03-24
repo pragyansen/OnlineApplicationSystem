@@ -11,6 +11,13 @@
 	<!-- Bootstrap 3.3.2 -->
 	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="../resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
+	
+ 	<style>
+	table, th, td {
+ 	   border: 3px solid black;
+	}
+	
+ 	</style>
 
 </head>
 
@@ -21,30 +28,99 @@
 
 	</div>
 
-	<div class="col-xs-10 col-xs-offset-1 loginMdl">
+	<div class="col-xs-12 h4 loginMdl">
 
 		<h2 class="text-center">Application Form</h2>
 		<br>
 		
-		<div class="col-md-9">
-			<div class="col-md-4">Name</div><div class="col-md-7">: ${personalDetails.getName()}</div>
-			<div class="col-md-4">Father's name</div><div class="col-md-7">: ${personalDetails.getFatherName()}</div>
-			<div class="col-md-4">Mother's name</div><div class="col-md-7">: ${personalDetails.getMotherName()}</div>
-			<div class="col-md-4">Gender</div><div class="col-md-7">: ${personalDetails.getGender()}</div>
-			<div class="col-md-4">Date-of-birth</div><div class="col-md-7">: ${personalDetails.getDob()}</div>
-			<div class="col-md-4">Age</div><div class="col-md-7">: ${personalDetails.getAge()}</div>
-			<div class="col-md-4">Physically Challenged</div><div class="col-md-7">: ${personalDetails.getHandicap()}</div>
-			<div class="col-md-4">Cast</div><div class="col-md-7">: ${personalDetails.getStudentCast()}</div>
-			<div class="col-md-4">Address</div><div class="col-md-7">: ${personalDetails.getAdl1()}</div>
-											   <div class="col-md-7 col-md-offset-4">: ${personalDetails.getAdl2()}</div>
-											   <div class="col-md-7 col-md-offset-4">: ${personalDetails.getAdl3()}</div>
-			<div class="col-md-4">Pin</div><div class="col-md-7">: ${personalDetails.getPin()}</div>
-			<div class="col-md-4">District</div><div class="col-md-7">: ${personalDetails.getDistrict()}</div>
-			<div class="col-md-4">State</div><div class="col-md-7">: ${personalDetails.getState()}</div>
+		<div class="col-xs-9">
+			<div class="row"><div class="col-xs-4">Name</div><div class="col-xs-7">: ${personalDetails.getName()}</div></div>
+			<div class="row"><div class="col-xs-4">Father's name</div><div class="col-xs-7">: ${personalDetails.getFatherName()}</div></div>
+			<div class="row"><div class="col-xs-4">Mother's name</div><div class="col-xs-7">: ${personalDetails.getMotherName()}</div></div>
+			<div class="row"><div class="col-xs-4">Gender</div><div class="col-xs-7">: ${personalDetails.getGender()}</div></div>
+			<div class="row"><div class="col-xs-4">Date-of-birth</div><div class="col-xs-7">: ${personalDetails.getDob()}</div></div>
+			<div class="row"><div class="col-xs-4">Age</div><div class="col-xs-7">: ${personalDetails.getAge()}</div></div>
+			<div class="row"><div class="col-xs-4">Physically Challenged</div><div class="col-xs-7">: ${personalDetails.getHandicap()}</div></div>
+			<div class="row"><div class="col-xs-4">Cast</div><div class="col-xs-7">: ${personalDetails.getStudentCast()}</div></div>
+			<div class="row"><div class="col-xs-4">Address Line 1</div><div class="col-xs-7">: ${personalDetails.getAdl1()}</div></div>
+			<div class="row"><div class="col-xs-4">Address Line 2</div><div class="col-xs-7">: ${personalDetails.getAdl2()}</div></div>
+			<div class="row"><div class="col-xs-4">Address Line 3</div><div class="col-xs-7">: ${personalDetails.getAdl3()}</div></div>
+			<div class="row"><div class="col-xs-4">Pin</div><div class="col-xs-7">: ${personalDetails.getPin()}</div></div>
+			<div class="row"><div class="col-xs-4">District</div><div class="col-xs-7">: ${personalDetails.getDistrict()}</div></div>
+			<div class="row"><div class="col-xs-4">State</div><div class="col-xs-7">: ${personalDetails.getState()}</div></div>
 		</div>
-		<div class="col-md-2">
 		
+		<div class="col-xs-2">		
 			<img style="max-width:100%" src="getFile/getImage/photo"/>
+		</div>
+		
+		<div class="col-xs-11" style="margin-top:30px">
+			<div class="col-xs-4">Educational Details</div>
+			<div class="col-xs-12 text-center">
+				 <table style="width:100%">
+				  <tr>
+				  	<th>Class</th>
+				  	<th>Institution</th>
+				  	<th>Board</th>
+				  	<th>Year of passing</th>
+				  	<th>Marks Obtained</th>
+				  	<th>Total Marks</th>
+				  	<th>Percentage</th>
+				  </tr>
+				  <tr>
+				    <td>Class 10</td>
+				    <td>${educationalDetails.getInstitution10()}</td>
+				    <td>${educationalDetails.getBoard10()}</td>
+				    <td>${educationalDetails.getYearOfPassing10()}</td>
+				    <td>${educationalDetails.getMarks10()}</td>
+				    <td>${educationalDetails.getTotalMarks10()}</td>
+				    <td>${educationalDetails.getPercentage10()}</td>
+				  </tr>
+				  <tr>
+				    <td>Class 12</td>
+				    <td>${educationalDetails.getInstitution12()}</td>
+				    <td>${educationalDetails.getBoard12()}</td>
+				    <td>${educationalDetails.getYearOfPassing12()}</td>
+				    <td>${educationalDetails.getMarks12()}</td>
+				    <td>${educationalDetails.getTotalMarks12()}</td>
+				    <td>${educationalDetails.getPercentage12()}</td>
+				  </tr>
+				</table> 
+			</div>
+			
+			<div class="col-xs-4" style="margin-top:30px">Marks obtained in class 12 exam</div>
+			<div class="col-xs-12 text-center">
+				 <table style="width:100%">
+				  <tr>
+				  	<th>Subject</th>
+				  	<td>${educationalDetails.getSubject1code()}</td>
+				  	<td>${educationalDetails.getSubject2code()}</td>
+				  	<td>${educationalDetails.getSubject3code()}</td>
+				  	<td>${educationalDetails.getSubject4code()}</td>
+				  	<td>${educationalDetails.getSubject5code()}</td>
+				  </tr>
+				  <tr>
+				  	<th>Total Marks</th>
+				  	<td>${educationalDetails.getSubject1total()}</td>
+				  	<td>${educationalDetails.getSubject2total()}</td>
+				  	<td>${educationalDetails.getSubject3total()}</td>
+				  	<td>${educationalDetails.getSubject4total()}</td>
+				  	<td>${educationalDetails.getSubject5total()}</td>
+				  </tr>
+				  <tr>
+				  	<th>Marks Obtained</th>
+				  	<td>${educationalDetails.getSubject1marks()}</td>
+				  	<td>${educationalDetails.getSubject2marks()}</td>
+				  	<td>${educationalDetails.getSubject3marks()}</td>
+				  	<td>${educationalDetails.getSubject4marks()}</td>
+				  	<td>${educationalDetails.getSubject5marks()}</td>
+				  </tr>
+				</table> 
+			</div>
+			
+			<div class="col-xs-12" style="margin-top:30px">
+				Course(s) Picked : ${courseDetails.pickedCourses() }
+			</div>
 		</div>
 
 	</div>

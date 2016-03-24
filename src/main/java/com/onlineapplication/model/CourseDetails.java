@@ -29,6 +29,19 @@ public class CourseDetails {
 		this.courseCodes = courseCodes;
 	}
 	
+	public String pickedCourses() {
+		String s = "";
+		for (int i = 0; i < courseCodes.length; i++) {
+			if( courseCodes[i] != null)
+			{	
+				s += courseCodes[i];
+				s += " ";
+			}
+		}
+		
+		return s;
+	}
+	
 	
 
 	
