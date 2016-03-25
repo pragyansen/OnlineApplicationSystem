@@ -34,21 +34,28 @@ public class DashboardController {
 
 	@RequestMapping(value = "/", method=RequestMethod.GET)
 	public ModelAndView home() {
-		 
-		String text = "";
+		
+		ModelAndView mv = new ModelAndView(); 
+		String text = "You have not applied to any course(s) yet.";
+		String link = "";
 		
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
 		CourseDetails courseDetails = new CourseDetails();
 		courseDetails = studentService.fetchCourseDetails(email);
-		if(null == courseDetails)
+		
+		if(courseDetails != null)
 		{
-			text = "You have not applied to any course(s) yet. Once you do, the details will show up here";
+			text = courseDetails.pickedCourses();
+			if(text == "")
+				text = "You have not applied to any course(s) yet.";
+			else
+			{
+				text = "You have applied for the following course(s) : " + text;
+				link = "<a href=\"application-form\"><span style=\"color:blue\">View Application Form</span></a>";
+				mv.addObject("link",link);
+			}	
 		}
-		else
-		{
-			text = "Work in progress.";
-		}
-		ModelAndView mv = new ModelAndView();
+		
 		mv.addObject("text",text);
 		mv.setViewName("dashboard");
 		
@@ -189,34 +196,20 @@ public class DashboardController {
 	@RequestMapping(value = "/application-form", method=RequestMethod.GET)
 	public ModelAndView applicationForm() {
 		 
-		String text = "";
-		
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
 		CourseDetails courseDetails = studentService.fetchCourseDetails(email);
 		
 		ModelAndView modelAndView = new ModelAndView("application-form");
-		if(null == courseDetails)
+		if(courseDetails != null)
 		{
-			text = "You have not applied to any course(s) yet. Once you do, the details will show up here";
-		}
-		else
-		{
-			
 			
 			PersonalDetails personalBean = studentService.fetchPersonalDetails(email);
-			System.out.println(personalBean.getName());
-			
 			EducationalDetails educationalBean = studentService.fetchEducationalDetails(email);
 			
 			modelAndView.addObject("personalDetails", personalBean);
 			modelAndView.addObject("educationalDetails", educationalBean);
 			modelAndView.addObject("courseDetails", courseDetails);
 			
-			String name = personalBean.getName();
-			System.out.println(personalBean.getName());
-//			modelAndView.addObject("name", name);
-			
-			text = "Work in progress.";
 		}
 		return modelAndView;
 	}

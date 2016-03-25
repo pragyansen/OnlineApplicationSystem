@@ -28,7 +28,7 @@
 
 	</div>
 
-	<div class="col-xs-12 h4 loginMdl">
+	<div class="col-xs-12 col-md-8 col-md-offset-2 h4 loginMdl">
 
 		<h2 class="text-center">Application Form</h2>
 		<br>
@@ -88,7 +88,7 @@
 				</table> 
 			</div>
 			
-			<div class="col-xs-4" style="margin-top:30px">Marks obtained in class 12 exam</div>
+			<div class="col-xs-12" style="margin-top:30px">Marks obtained in class 12 exam</div>
 			<div class="col-xs-12 text-center">
 				 <table style="width:100%">
 				  <tr>
@@ -118,12 +118,35 @@
 				</table> 
 			</div>
 			
-			<div class="col-xs-12" style="margin-top:30px">
-				Course(s) Picked : ${courseDetails.pickedCourses() }
+			<div class="row"><div class="col-xs-12" style="margin-top:30px">Courses Picked : ${courseDetails.pickedCourses()}</div></div>
+			
+			<div class="row"><div class="col-xs-12" style="margin-top:30px">
+				Declaration : The above information is accurate to the best of my knowledge.
+			</div></div>
+			
+			<div class="row"><div class="col-xs-12"  style="margin-top:20px">
+				Digital Signature : <img style="max-width:100%" src="getFile/getImage/sign"/>
+			</div></div>
+			
+			<div class="col-xs-12 col-md-4 hidden-print"  style="margin-top:30px">
+				<button class="btn btn-block btn-primary" onclick="myFunction()">Print Application Form</button>
 			</div>
+			
+			<div class="col-xs-12 col-md-4 hidden-print"  style="margin-top:30px">
+				<button type="button" class="btn btn-block btn-success" onclick="window.location.href='../dashboard/' ">Cancel</button>
+			</div>
+			
 		</div>
 
 	</div>
+	
+	<script>
+	
+		function myFunction() {
+		    window.print();
+		}
+	
+		</script>
 
 </body>
 

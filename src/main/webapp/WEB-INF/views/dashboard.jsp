@@ -30,6 +30,8 @@
 	      </div>
 	      <div class="modal-body">
 	        ${text}
+	        <br>
+	        ${link}
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -40,10 +40,10 @@
 			
 			<div class="form-group col-xs-12">
 				<div class="col-md-3">
-					<button type="submit" class="btn btn-primary btn-block">Submit</button>
+					<button type="submit" class="btn btn-primary btn-block" style="margin-top:20px">Submit</button>
 				</div>
 				<div class="col-md-3">
-					<button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Cancel</button>
+					<button type="button" class="btn btn-success btn-block" style="margin-top:20px" onclick="window.location.href='../dashboard/' ">Cancel</button>
 				</div>
 			</div>
 				

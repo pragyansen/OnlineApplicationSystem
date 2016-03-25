@@ -33,16 +33,9 @@ public class CourseDetails {
 		String s = "";
 		for (int i = 0; i < courseCodes.length; i++) {
 			if( courseCodes[i] != null)
-			{	
-				s += courseCodes[i];
-				s += " ";
-			}
-		}
-		
+				s = s + courseCodes[i] + " ";
+		}		
 		return s;
 	}
-	
-	
-
 	
 }

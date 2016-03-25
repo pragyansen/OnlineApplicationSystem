@@ -142,11 +142,11 @@
 				</div>
 			</div>
 			<div class="form-group col-xs-12">
-					<div class="col-xs-5">
+					<div class="col-xs-5 col-md-3 col-md-offset-3">
 						<button type="submit" class="btn btn-primary btn-block">Submit</button>
 					</div>
-					<div class="col-xs-6">
-						<button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Back to Dashboard</button>
+					<div class="col-xs-5 col-md-3">
+						<button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Cancel</button>
 					</div>
 				</div>
 		</form:form>

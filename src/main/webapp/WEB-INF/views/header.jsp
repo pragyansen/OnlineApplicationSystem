@@ -7,15 +7,15 @@
 	
 </head>
 <body>
-	<div class="col-xs-12 header">
-		<div class="col-xs-9">
+	<div class="col-xs-12 header hidden-print">
+		<div class="col-xs-7">
 			<a href="../dashboard/" class="customanchor"> <span
 				class="glyphicon glyphicon-education" aria-hidden="true"></span> <b><spring:message
 						code="login.appname.first" /></b> <spring:message
 					code="login.appname.second" />
 			</a>
 		</div>
-		<div class="col-xs-3 h4"  style="text-align:right">
+		<div class="col-xs-5 h4"  style="text-align:right">
 			<a href="../login?logout">Log Out</a>
 		</div>
   	</div>
