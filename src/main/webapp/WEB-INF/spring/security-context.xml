@@ -5,7 +5,7 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
-	<http auto-config="true" use-expressions="true">
+	<http auto-config="true" use-expressions="true" >
 		<intercept-url pattern="/login*" access="permitAll" />
 		<intercept-url pattern="/register" access="permitAll" />
 		<intercept-url pattern="/dashboard/*" access="hasAnyRole('ROLE_USER')" />
@@ -17,12 +17,16 @@
 			authentication-failure-url="/login?error" 
 			username-parameter="username"
 			password-parameter="password" />
-		<logout logout-url="/login?logout"/>
-		<remember-me key="myAppKey" remember-me-parameter="rememberme" />
+		<logout delete-cookies="rememberme" invalidate-session="true" logout-success-url="/login?logout"/>
+		<remember-me key="myAppKey" remember-me-parameter="rememberme" remember-me-cookie="rememberme" />
 		<session-management>
 			<concurrency-control max-sessions="2"
 				expired-url="/login" />
 		</session-management>
+		<headers>
+			<cache-control/>
+			<hsts/>
+		</headers>
 	</http>
 
 	<!-- <authentication-manager> <authentication-provider> <user-service> <user 

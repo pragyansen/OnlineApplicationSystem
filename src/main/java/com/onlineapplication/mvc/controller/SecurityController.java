@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -29,7 +30,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.onlineapplication.kie.model.Message;
 import com.onlineapplication.model.Student;
 import com.onlineapplication.mvc.bean.RegisterBean;
 import com.onlineapplication.mvc.validator.RegisterBeanValidator;
@@ -75,6 +75,11 @@ public class SecurityController {
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		    if (auth != null){    
 		        new SecurityContextLogoutHandler().logout(request, response, auth);
+		        Cookie cookie = new Cookie("rememberme", null); // Not necessary, but saves bandwidth.
+		        cookie.setPath("/online-application");
+		        cookie.setHttpOnly(true);
+		        cookie.setMaxAge(0); 
+		        response.addCookie(cookie);
 		    }
 			model.addObject("msg", "You've been logged out successfully.");
 		}
@@ -110,8 +115,8 @@ public class SecurityController {
 
 		Student student = studentService.saveNewStudent(registerBean);
 		System.out.println(student.getPassword());
-/*		if(null != student)
-			mailService.sendNewRegistrationMail(student);*/
+		if(null != student)
+			mailService.sendNewRegistrationMail(student);
 
 		String message = "Registration Success, please check mail inbox for password";
 		model.addAttribute("msg", message);
@@ -148,7 +153,7 @@ public class SecurityController {
 		} else if("ROLE_USER".equals(student.getRole())){
 			student = studentService.resetPassword(student);
 			System.out.println(student.getPassword());
-			//	mailService.sendForgotPasswordMail(student);
+			mailService.sendForgotPasswordMail(student);
 			return new ResponseEntity<String>(new String("Mail Sent to registered mail address"), HttpStatus.OK);
 		}
 		else {
