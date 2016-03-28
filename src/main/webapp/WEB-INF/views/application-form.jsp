@@ -12,11 +12,14 @@
 	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="../resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
 	
- 	<style>
-	table, th, td {
- 	   border: 3px solid black;
-	}
+  	<style>
+ 	table, th, td {
+  	   border: 2px solid black;
+ 	}
 	
+	.row{
+		margin-top : 10px;
+	}
  	</style>
 
 </head>
@@ -55,9 +58,9 @@
 		</div>
 		
 		<div class="col-xs-11" style="margin-top:30px">
-			<div class="col-xs-4">Educational Details</div>
-			<div class="col-xs-12 text-center">
-				 <table style="width:100%">
+			<div class="col-xs-12">Educational Details</div>
+			<div class="col-xs-12 text-center table-responsive">
+				 <table class="table table-condensed" style="width:100%">
 				  <tr>
 				  	<th>Class</th>
 				  	<th>Institution</th>
@@ -89,8 +92,8 @@
 			</div>
 			
 			<div class="col-xs-12" style="margin-top:30px">Marks obtained in class 12 exam</div>
-			<div class="col-xs-12 text-center">
-				 <table style="width:100%">
+			<div class="col-xs-12 text-center table-responsive">
+				 <table class="table table-condensed" style="width:100%">
 				  <tr>
 				  	<th>Subject</th>
 				  	<td>${educationalDetails.getSubject1code()}</td>

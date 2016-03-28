@@ -64,7 +64,7 @@
 					Marks Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="Marks10" type="text" class="form-control"
+							<form:input id="marks10" path="Marks10" type="text" class="form-control"
 								placeholder="400" />
 						</div>
 					</div>
@@ -74,7 +74,7 @@
 					Total Marks<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="totalMarks10" type="text" class="form-control"
+							<form:input id="totalMarks10" path="totalMarks10" type="text" class="form-control"
 								placeholder="400" />
 						</div>
 					</div>
@@ -84,8 +84,8 @@
 					Percentage<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input readonly="true" path="percentage10" type="text" class="form-control"
-								placeholder="80" />
+							<form:input id="percentage10" readonly="true" path="percentage10" type="text" class="form-control"
+								/>
 						</div>
 					</div>
 
@@ -153,7 +153,7 @@
 						</form:label>
 						<div class="col-md-7">
 							<form:input readonly="true" path="percentage12" type="text" class="form-control"
-								placeholder="80" />
+								/>
 						</div>
 					</div>
 
@@ -285,8 +285,6 @@
 	<script	src="../resources/plugins/jQueryUI/jquery-ui.min.js"></script>
 	<!-- Bootstrap 3.3.2 JS -->
 	<script	src="../resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<!-- 	DatePicker -->
-	<script	src="../resources/bootstrap/js/bootstrap-datepicker.js" type="text/javascript"></script>
-	<script src="../resources/bootstrap/js/personalDetailsapp.js" type="text/javascript"></script>
+	<script src="../resources/bootstrap/js/educationalDetails.js" type="text/javascript"></script>
 </body>
 </html>
