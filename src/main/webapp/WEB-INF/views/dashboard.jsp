@@ -53,16 +53,45 @@
 	  		  	
 	  	<div class="row">
 		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="personalDetails">A. Enter Basic Details</a></div>
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+		  	<c:if test="${not empty link }">
+		  	A. Enter Basic Details
+		  	</c:if>
+		  	<c:if test="${empty link }">
+		  	<a href="personalDetails">	
+		  	A. Enter Basic Details</a>
+		  	</c:if>
+		  	</div>
 		  	</div>
 		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="educationalDetails">B. Enter Educational Details</a></div>
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+		  	<c:if test="${not empty link }">
+		  	B. Enter Educational Details
+		  	</c:if>
+		  	<c:if test="${empty link }">
+		  	<a href="educationalDetails">B. Enter Educational Details</a>
+		  	</c:if>
+		  	</div>
 		  	</div>
 		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="fileupload">C. Upload Photo and Signature</a></div>
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+		  	<c:if test="${not empty link }">
+		  	C. Upload Photo and Signature
+		  	</c:if>
+		  	<c:if test="${empty link }">
+		  	<a href="fileupload">C. Upload Photo and Signature</a>
+		  	</c:if>
+		  	</div>
 		  	</div>
 		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box"><a href="coursePicker">D. Apply for a Course</a></div>
+		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+		  	<c:if test="${not empty link }">
+		  	D. Apply for a Course
+		  	</c:if>
+		  	<c:if test="${empty link }">
+		  	<a href="coursePicker">D. Apply for a Course</a>
+		  	</c:if>
+		  	</div>
 		  	</div>
 	  	</div>
 	  	
