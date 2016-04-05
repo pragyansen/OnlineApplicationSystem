@@ -81,6 +81,13 @@ public class DashboardController {
 		
 		PersonalDetails personalBean = null;
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		
+		CourseDetails courseDetails = studentService.fetchCourseDetails(email);
+		if(null != courseDetails){
+			modelView.setViewName("redirect:/dashboard/");
+			return modelView;
+		}
+		
 		personalBean = studentService.fetchPersonalDetails(email);
 		if(null == personalBean)
 			personalBean = new PersonalDetails();
@@ -119,6 +126,13 @@ public class DashboardController {
 		
 		EducationalDetails educationalBean = new EducationalDetails();
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		
+		CourseDetails courseDetails = studentService.fetchCourseDetails(email);
+		if(null != courseDetails){
+			modelView.setViewName("redirect:/dashboard/");
+			return modelView;
+		}
+		
 		educationalBean = studentService.fetchEducationalDetails(email);
 		if(null == educationalBean)
 			educationalBean = new EducationalDetails();
@@ -176,6 +190,10 @@ public class DashboardController {
 		CourseDetails courseDetails = new CourseDetails();
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
 		courseDetails = studentService.fetchCourseDetails(email);
+		if(null != courseDetails){
+			modelView.setViewName("redirect:/dashboard/");
+			return modelView;
+		}
 		if(null == courseDetails)
 			courseDetails = new CourseDetails();
 		modelView.addObject("courseDetails", courseDetails);
