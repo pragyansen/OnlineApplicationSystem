@@ -183,10 +183,7 @@ public class DashboardController {
 	
 	@RequestMapping(value = "/coursePicker", method=RequestMethod.GET)
 	public ModelAndView coursePicker(){
-		List<Course> courses = ruleService.invokeRuleSet(SecurityContextHolder.getContext().getAuthentication().getName());
 		ModelAndView modelView = new ModelAndView();
-		modelView.addObject("courseList",courses);
-		
 		CourseDetails courseDetails = new CourseDetails();
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
 		courseDetails = studentService.fetchCourseDetails(email);
@@ -197,6 +194,10 @@ public class DashboardController {
 		if(null == courseDetails)
 			courseDetails = new CourseDetails();
 		modelView.addObject("courseDetails", courseDetails);
+
+		List<Course> courses = ruleService.invokeRuleSet(SecurityContextHolder.getContext().getAuthentication().getName());
+		modelView.addObject("courseList",courses);
+		
 			
 		modelView.setViewName("coursePicker");
 		return modelView;
