@@ -46,7 +46,7 @@ public class MailService {
                   Map<String,Object> model = new HashMap<String, Object>();
                   model.put("student", student);
                   String text = VelocityEngineUtils.mergeTemplateIntoString(
-                          velocityEngine, "com/onlineapplication/service/registration-confirmation.vm", model);
+                          velocityEngine, "mail/registration-confirmation.vm", model);
                   message.setText(text, true);
               }
           };
@@ -76,7 +76,7 @@ public class MailService {
                 Map<String,Object> model = new HashMap<String, Object>();
                 model.put("student", student);
                 String text = VelocityEngineUtils.mergeTemplateIntoString(
-                        velocityEngine, "com/onlineapplication/service/forgot-password.vm", model);
+                        velocityEngine, "mail/forgot-password.vm", model);
                 message.setText(text, true);
             }
         };

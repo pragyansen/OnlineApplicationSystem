@@ -35,11 +35,11 @@ public class StudentDao {
 	public Student findStudentByPhone(String phone) {
 		TypedQuery<Student> q = entityManager.createQuery("SELECT o FROM Student AS o WHERE o.phone = :phone", Student.class);
 		q.setParameter("phone", phone);
-		List<Student> student = q.getResultList();
-		if(CollectionUtils.isEmpty(student)){
+		List<Student> studentList = q.getResultList();
+		if(CollectionUtils.isEmpty(studentList)){
 			return null;
 		}else{
-			return q.getResultList().get(0);
+			return studentList.get(0);
 		}
 	}
 

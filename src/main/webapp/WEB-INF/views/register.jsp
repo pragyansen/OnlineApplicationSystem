@@ -51,7 +51,7 @@
 						<form:label path="email" class="control-label col-md-2">Email:
 						</form:label>
 						<div class="col-md-10">
-							<form:input type="email" class="form-control" path="email"	placeholder="Enter email" />
+							<form:input type="email" class="form-control" path="email" id="email" placeholder="Enter email" />
 							<form:errors path="email" class="alert-danger"/>
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 						<div class="col-md-2">
 						</div>
 						<div class="col-md-10">
-							<button type="submit" class="btn btn-primary btn-block">Submit</button>
+							<button type="submit" class="btn btn-primary btn-block" onclick="return validate()">Submit</button>
 						</div>
 					</div>
 					<div class="row form-group">
@@ -92,5 +92,12 @@
   </div>
   
 	<jsp:include page="/WEB-INF/views/commons/jslinks.jsp" />
+	<script type="text/javascript">
+	function validate(){
+		alert($('#email').val());
+		return false;
+	}
+	
+	</script>
   </body>
 </html>
