@@ -3,6 +3,8 @@ package com.onlineapplication.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.onlineapplication.constants.AppConstants;
+
 @Entity
 public class CourseDetails {
 
@@ -33,7 +35,7 @@ public class CourseDetails {
 		String s = "";
 		for (int i = 0; i < courseCodes.length; i++) {
 			if( courseCodes[i] != null)
-				s = s + courseCodes[i] + " ";
+				s = s + AppConstants.HONOURS_SUB_MAP.get(courseCodes[i]) + " ";
 		}		
 		return s;
 	}

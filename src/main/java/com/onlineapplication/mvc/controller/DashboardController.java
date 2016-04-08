@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.onlineapplication.constants.AppConstants;
 import com.onlineapplication.model.CourseDetails;
 import com.onlineapplication.model.EducationalDetails;
 import com.onlineapplication.model.PersonalDetails;
@@ -61,18 +62,6 @@ public class DashboardController {
 		
 		return mv;
 	}
-	
-	
-/*	@ModelAttribute("personalBean")
-	public PersonalDetails createPerosnalBean() {
-		PersonalDetails personalBean = null;
-		String email = SecurityContextHolder.getContext().getAuthentication().getName();
-		personalBean = studentService.fetchPersonalDetails(email);
-		if(null == personalBean)
-			personalBean = new PersonalDetails();
-		personalBean.setName(studentService.fetchStudentByEmail(email).getName());
-		return personalBean;
-	}*/
 		
 	
 	@RequestMapping(value = "/personalDetails", method=RequestMethod.GET)
@@ -109,16 +98,6 @@ public class DashboardController {
 		return "redirect:/dashboard/";
 	}
 	
-		
-/*	@ModelAttribute("educationalBean")
-	public EducationalDetails createEducationalBean() {
-		EducationalDetails educationalBean = new EducationalDetails();
-		String email = SecurityContextHolder.getContext().getAuthentication().getName();
-		educationalBean = studentService.fetchEducationalDetails(email);
-		if(null == educationalBean)
-			educationalBean = new EducationalDetails();
-		return educationalBean;
-	}*/
 	
 	@RequestMapping(value = "/educationalDetails", method=RequestMethod.GET)
 	public ModelAndView educationalDetails(){
@@ -227,8 +206,7 @@ public class DashboardController {
 			
 			modelAndView.addObject("personalDetails", personalBean);
 			modelAndView.addObject("educationalDetails", educationalBean);
-			modelAndView.addObject("courseDetails", courseDetails);
-			
+			modelAndView.addObject("courseDetails", courseDetails);			
 		}
 		return modelAndView;
 	}
