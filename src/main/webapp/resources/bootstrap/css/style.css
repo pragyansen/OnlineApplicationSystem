@@ -53,16 +53,40 @@ a, a:hover {
 }
 
 .dashboard-box{
-	min-height : 70px;
-	margin-top : 50px;
-	text-align : center;
-	padding-top : 20px;
-	padding-left : 10px;
-	padding-right : 10px;
-	padding-bottom : 20px;
+/* 	min-height : 75px; */
+	margin-top : 20px;
+/* 	text-align : center; */
+	padding-top : 10px;
+	padding-left : 20px;
+/* 	padding-right : 10px; */
+	padding-bottom : 10px;
 	font-size: 20px;
-	border-radius: 10px;
+/* 	border-radius: 10px; */
+/* 	display: table-cell; */
+/* vertical-align: middle; */
 }
+
+.dashboard-box-inactive{
+/* 	min-height : 75px; */
+	margin-top : 20px;
+/* 	text-align : center; */
+	padding-top : 10px;
+	padding-left : 20px;
+/* 	padding-right : 10px; */
+	padding-bottom : 10px;
+	font-size: 20px;
+/* 	border-radius: 10px; */
+/* 	display: table-cell; */
+/* vertical-align: middle; */
+	background-color : rgba(51, 122, 183, 0.63);
+}
+}
+
+.inactive-text{
+	
+	text-decoration: line-through;
+}
+
 
 .dashboard-infoBox{
 	min-height : 80px;

@@ -34,7 +34,7 @@
 					Father's Name<span style="color: red;"> *</span>
 				</form:label>
 				<div class="col-md-7">
-					<form:input path="fatherName" type="text" class="form-control"	placeholder="Father's Name" />
+					<form:input id="fatherName" path="fatherName" type="text" class="form-control"	placeholder="Father's Name" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -42,7 +42,7 @@
 					Mother's Name<span style="color: red;"> *</span>
 				</form:label>
 				<div class="col-md-7">
-					<form:input path="motherName" type="text" class="form-control"	placeholder="Mother's Name" />
+					<form:input id="motherName" path="motherName" type="text" class="form-control"	placeholder="Mother's Name" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -60,7 +60,7 @@
 				</form:label>
 				<div class="col-md-3">
 					<div class="input-group date" id="dobDatePicker">
-						<form:input path="dob" type="text" class="form-control" id="dob" readonly="true" />
+						<form:input id="dob" path="dob" type="text" class="form-control" readonly="true" />
 						<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 						</span>
@@ -70,7 +70,7 @@
 			<div class="form-group col-xs-12 noPadding">
 				<form:label path="age" class="control-form:label col-md-3">Age&nbsp;&nbsp;</form:label>
 				<div class="col-md-2">
-					<form:input path="age" type="text" class="form-control" id="age" readonly="true"/>
+					<form:input id="age" path="age" type="text" class="form-control" readonly="true"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -98,7 +98,7 @@
 					Address Line 1<span style="color: red;"> *</span>
 				</form:label>
 				<div class="col-md-7">
-					<form:input path="adl1" type="text" class="form-control" placeholder="Apartment Number" />
+					<form:input id="adl1" path="adl1" type="text" class="form-control" placeholder="Apartment Number" />
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -122,7 +122,7 @@
 					PIN<span style="color: red;"> *</span>
 				</form:label>
 				<div class="col-md-7">
-					<form:input path="pin" type="text" class="form-control"	placeholder="Postal Code"/>
+					<form:input id="pin" path="pin" type="text" class="form-control" onkeypress="return isNumberKey(event)" placeholder="Postal Code"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -130,7 +130,7 @@
 					District<span style="color: red;"> *</span>
 				</form:label>
 				<div class="col-md-7">
-					<form:input path="district" type="text" class="form-control"	placeholder="District"/>
+					<form:input id="district" path="district" type="text" class="form-control"	placeholder="District"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
@@ -143,7 +143,7 @@
 			</div>
 			<div class="form-group col-xs-12">
 					<div class="col-xs-5 col-md-3 col-md-offset-3">
-						<button type="submit" class="btn btn-primary btn-block">Submit</button>
+						<button type="submit" class="btn btn-primary btn-block" onclick="return validate()">Submit</button>
 					</div>
 					<div class="col-xs-5 col-md-3">
 						<button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Cancel</button>

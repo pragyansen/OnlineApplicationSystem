@@ -13,6 +13,16 @@
 	<link href="../resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 
+<style>
+
+	/* Popover Body */
+.popover-content {
+    color: #000000;
+    padding: 25px;
+}
+
+</style>
+
 </head>
 <body>
 <div class="noMargin noPadding">
@@ -43,61 +53,86 @@
 	
   	<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 loginMdl">
 	  	
-	  	<div class="row">
-		  	<div class = "col-xs-12 col-md-10 col-md-offset-1 bg-success dashboard-infoBox">
-		  	Details regarding the courses you've applied for can be found
-		  	<a href="" data-toggle="modal" data-target="#myModal"><span style="color:blue"> here</span></a>
-		  	</div>
+<!-- 	  	<div class="row"> -->
+<!-- 		  	<div class = "col-xs-12 col-md-10 col-md-offset-1 bg-success dashboard-infoBox"> -->
+<!-- 		  	Details regarding the courses you've applied for can be found -->
+<!-- 		  	<a href="" data-toggle="modal" data-target="#myModal"><span style="color:blue"> here</span></a> -->
+<!-- 		  	</div> -->
 		  	
-	  	</div>
+<!-- 	  	</div> -->
 	  		  	
 	  	<div class="row">
-		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
-		  	<c:if test="${not empty link }">
-		  	A. Enter Basic Details
-		  	</c:if>
-		  	<c:if test="${empty link }">
-		  	<a href="personalDetails">	
-		  	A. Enter Basic Details</a>
-		  	</c:if>
+		  	<div class="col-xs-12">
+			  	<c:if test="${not empty link }">
+					<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box-inactive">
+				  	 	<span class="inactive-text">A. Enter Basic Details </span>
+				  	 	<span class="glyphicon glyphicon-ok"></span></div>
+				</c:if>
+				
+			  	<c:if test="${empty link }">
+			  		<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+				  	<a href="personalDetails">	
+				  	A. Enter Basic Details</a></div>
+			  	</c:if>
 		  	</div>
+		  	
+		  	<div class="col-xs-12">
+			  	<c:if test="${not empty link }">
+					<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box-inactive">
+				  	 	<span class="inactive-text">B. Enter Educational Details </span>
+				  	 	<span class="glyphicon glyphicon-ok"></span></div>
+				</c:if>
+				
+			  	<c:if test="${empty link }">
+			  		<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+				  	<a href="educationalDetails">	
+				  	B. Enter Educational Details</a></div>
+			  	</c:if>
 		  	</div>
-		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
-		  	<c:if test="${not empty link }">
-		  	B. Enter Educational Details
-		  	</c:if>
-		  	<c:if test="${empty link }">
-		  	<a href="educationalDetails">B. Enter Educational Details</a>
-		  	</c:if>
+		  	
+		  	<div class="col-xs-12">
+			  	<c:if test="${not empty link }">
+					<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box-inactive">
+				  	 	<span class="inactive-text">C. Upload Photo and Signature </span>
+				  	 	<span class="glyphicon glyphicon-ok"></span></div>
+				</c:if>
+				
+			  	<c:if test="${empty link }">
+			  		<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+				  	<a href="fileupload">	
+				  	C. Upload Photo and Signature</a></div>
+			  	</c:if>
 		  	</div>
+		  	
+		  	<div class="col-xs-12">
+			  	<c:if test="${not empty link }">
+					<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box-inactive">
+				  	 	<span class="inactive-text">D. Apply for a Course </span>
+				  	 	<span class="glyphicon glyphicon-ok"></span></div>
+				</c:if>
+				
+			  	<c:if test="${empty link }">
+			  		<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+				  	<a href="coursePicker">	
+				  	D. Apply for a Course</a></div>
+			  	</c:if>
 		  	</div>
-		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
-		  	<c:if test="${not empty link }">
-		  	C. Upload Photo and Signature
-		  	</c:if>
-		  	<c:if test="${empty link }">
-		  	<a href="fileupload">C. Upload Photo and Signature</a>
-		  	</c:if>
-		  	</div>
-		  	</div>
-		  	<div class="col-xs-12 col-md-6">
-		  	<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
-		  	<c:if test="${not empty link }">
-		  	D. Apply for a Course
-		  	</c:if>
-		  	<c:if test="${empty link }">
-		  	<a href="coursePicker">D. Apply for a Course</a>
-		  	</c:if>
-		  	</div>
-		  	</div>
+		  	
+		  	<div class="col-xs-12">
+			  	<c:if test="${not empty link }">
+					<div class = "col-xs-10 col-xs-offset-1 bg-primary dashboard-box">
+				  	<a href="application-form">	
+				  	E. Print Application Form</a></div>
+				</c:if>
+			</div>
+		  	
+		  	
+		  	
 	  	</div>
 	  	
 	  	<div class="row">
 		  	<div class = "col-xs-12 col-md-10 col-md-offset-1 bg-info dashboard-infoBox">
-		  		<span style="color:red">Important :</span> A and B will be disabled after you apply for your first course.
+		  		<span style="color:red">Important :</span> A, B and C will be inaccessible after you apply for your first course.
 			</div>
 		  	
 	  	</div>
@@ -117,6 +152,12 @@
 function myFunction() {
     window.print();
 }
+
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+
 </script>
 		
 </body>
