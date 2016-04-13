@@ -30,7 +30,7 @@
 					Name of the Institution<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="institution10" type="text" class="form-control"
+							<form:input id="institution10" path="institution10" type="text" class="form-control"
 								placeholder="XYZ School, Kolkata" />
 						</div>
 					</div>
@@ -40,7 +40,7 @@
 					Board<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:select class="form-control" path="board10">
+							<form:select class="form-control" id="board10" path="board10">
 								<option value="WBBSE">WBSSE</option>
 								<option value="ISC">ISC</option>
 								<option value="CBSE">CBSE</option>
@@ -54,7 +54,7 @@
 					Year of Passing<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="yearOfPassing10" type="text" class="form-control"
+							<form:input id="yearOfPassing10" path="yearOfPassing10" type="number" onkeypress="return isNumberKey(event)" class="form-control"
 								placeholder="2016" />
 						</div>
 					</div>					
@@ -64,7 +64,7 @@
 					Marks Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input id="marks10" path="Marks10" type="text" class="form-control"
+							<form:input id="marks10" path="Marks10" type="text" class="form-control marks-group-10"
 								placeholder="400" />
 						</div>
 					</div>
@@ -74,7 +74,7 @@
 					Total Marks<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input id="totalMarks10" path="totalMarks10" type="text" class="form-control"
+							<form:input id="totalMarks10" path="totalMarks10" type="text" class="form-control marks-group-10"
 								placeholder="400" />
 						</div>
 					</div>
@@ -98,7 +98,7 @@
 					Name of the Institution<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="institution12" type="text" class="form-control"
+							<form:input id="institution12" path="institution12" type="text" class="form-control"
 								placeholder="XYZ School, Kolkata" />
 						</div>
 					</div>
@@ -108,7 +108,7 @@
 					Board<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:select class="form-control" path="board12">
+							<form:select class="form-control" id="board12" path="board12">
 								<option value="WBCHSE">WBCHSE</option>
 								<option value="ISC">ISC</option>
 								<option value="CBSE">CBSE</option>
@@ -122,7 +122,7 @@
 					Year of Passing<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="yearOfPassing12" type="text" class="form-control"
+							<form:input id="yearOfPassing12" path="yearOfPassing12" type="number" onkeypress="return isNumberKey(event)" class="form-control"
 								placeholder="2016" />
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 					Marks Obtained<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="Marks12" type="text" class="form-control"
+							<form:input id="marks12" path="Marks12" type="text" class="form-control marks-group-12"
 								placeholder="400" />
 						</div>
 					</div>
@@ -142,7 +142,7 @@
 					Total Marks<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input path="totalMarks12" type="text" class="form-control"
+							<form:input id="totalMarks12" path="totalMarks12" type="text" class="form-control marks-group-12"
 								placeholder="400" />
 						</div>
 					</div>
@@ -152,7 +152,7 @@
 					Percentage<span style="color: red;"> *</span>
 						</form:label>
 						<div class="col-md-7">
-							<form:input readonly="true" path="percentage12" type="text" class="form-control"
+							<form:input readonly="true" id="percentage12" path="percentage12" type="text" class="form-control"
 								/>
 						</div>
 					</div>
@@ -166,17 +166,17 @@
 				Subject<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-11 col-md-3">
-								<form:select path="subject1code" class="form-control" required="true">
+								<form:select id="subject1code" path="subject1code" class="form-control subjects" >
 									<form:option value="0" disabled="true" selected="true">Subject</form:option>
 									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
 								</form:select>
 							</div>
 							<div class="col-xs-5 col-md-2">
-								<form:input path="subject1marks" type="text" class="form-control"
+								<form:input id="subject1marks" path="subject1marks" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Obtained" />
 							</div>
 							<div class="col-xs-6 col-md-2">
-							<form:input path="subject1total" type="text" class="form-control"
+							<form:input id="subject1total" path="subject1total" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Out Of"/>
 							</div>
 						</div>
@@ -187,17 +187,17 @@
 				Subject<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-11 col-md-3">
-								<form:select path="subject2code" class="form-control" required="true">
+								<form:select path="subject2code" class="form-control subjects" >
 									<form:option value="0" disabled="true" selected="true">Subject</form:option>
 									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
 								</form:select>
 							</div>
 							<div class="col-xs-5 col-md-2">
-								<form:input path="subject2marks" type="text" class="form-control"
+								<form:input path="subject2marks" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Obtained" />
 							</div>
 							<div class="col-xs-6 col-md-2">
-							<form:input path="subject2total" type="text" class="form-control"
+							<form:input path="subject2total" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Out Of"/>
 							</div>
 						</div>
@@ -208,17 +208,17 @@
 				Subject<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-11 col-md-3">
-								<form:select path="subject3code" class="form-control" required="true">
+								<form:select path="subject3code" class="form-control subjects" >
 									<form:option value="0" disabled="true" selected="true">Subject</form:option>
 									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
 								</form:select>
 							</div>
 							<div class="col-xs-5 col-md-2">
-								<form:input path="subject3marks" type="text" class="form-control"
+								<form:input path="subject3marks" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Obtained" />
 							</div>
 							<div class="col-xs-6 col-md-2">
-							<form:input path="subject3total" type="text" class="form-control"
+							<form:input path="subject3total" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Out Of"/>
 							</div>
 						</div>
@@ -229,17 +229,17 @@
 				Subject<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-11 col-md-3">
-								<form:select path="subject4code" class="form-control" required="true">
+								<form:select path="subject4code" class="form-control subjects" >
 									<form:option value="0" disabled="true" selected="true">Subject</form:option>
 									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
 								</form:select>
 							</div>
 							<div class="col-xs-5 col-md-2">
-								<form:input path="subject4marks" type="text" class="form-control"
+								<form:input path="subject4marks" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Obtained" />
 							</div>
 							<div class="col-xs-6 col-md-2">
-							<form:input path="subject4total" type="text" class="form-control"
+							<form:input path="subject4total" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Out Of"/>
 							</div>
 						</div>
@@ -250,17 +250,17 @@
 				Subject<span style="color: red;"> *</span>
 							</form:label>
 							<div class="col-xs-11 col-md-3">
-								<form:select path="subject5code" class="form-control" required="true">
+								<form:select path="subject5code" class="form-control subjects" >
 									<form:option value="0" disabled="true" selected="true">Subject</form:option>
 									<form:options items="${subjects}" itemValue="subjectCode" itemLabel="subjectName"/>
 								</form:select>
 							</div>
 							<div class="col-xs-5 col-md-2">
-								<form:input path="subject5marks" type="text" class="form-control"
+								<form:input path="subject5marks" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Obtained" />
 							</div>
 							<div class="col-xs-6 col-md-2">
-							<form:input path="subject5total" type="text" class="form-control"
+							<form:input path="subject5total" type="number" class="form-control" onkeypress="return isNumberKey(event)"
 									placeholder="Out Of"/>
 							</div>
 						</div>
@@ -269,7 +269,7 @@
 				
 				<div class="form-group col-xs-12">
 					<div class="col-xs-5 col-md-3">
-						<button type="submit" class="btn btn-primary btn-block">Submit</button>
+						<button type="submit" class="btn btn-primary btn-block" onclick="return validate()">Submit</button>
 					</div>
 					<div class="col-xs-5 col-md-3">
 						<button type="button" class="btn btn-success btn-block" onclick="window.location.href='../dashboard/' ">Cancel</button>
@@ -285,6 +285,6 @@
 	<script	src="../resources/plugins/jQueryUI/jquery-ui.min.js"></script>
 	<!-- Bootstrap 3.3.2 JS -->
 	<script	src="../resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../resources/bootstrap/js/educationalDetails.js" type="text/javascript"></script>
+	<script src="../resources/bootstrap/js/educationalDetailsapp.js" type="text/javascript"></script>
 </body>
 </html>

@@ -122,7 +122,7 @@
 					PIN<span style="color: red;"> *</span>
 				</form:label>
 				<div class="col-md-7">
-					<form:input id="pin" path="pin" type="text" class="form-control" onkeypress="return isNumberKey(event)" placeholder="Postal Code"/>
+					<form:input id="pin" path="pin" type="number" class="form-control" onkeypress="return isNumberKey(event)" placeholder="Postal Code"/>
 				</div>
 			</div>
 			<div class="form-group col-xs-12 noPadding">
