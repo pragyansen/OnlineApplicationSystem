@@ -132,7 +132,7 @@
 	  	
 	  	<div class="row">
 		  	<div class = "col-xs-12 col-md-10 col-md-offset-1 bg-info dashboard-infoBox">
-		  		<span style="color:red">Important :</span> A, B and C will be inaccessible after you apply for your first course.
+		  		<span style="color:red">Important :</span> After you apply for a course, you cannot change any information.
 			</div>
 		  	
 	  	</div>
