@@ -18,7 +18,7 @@
  	}
 	
 	.row{
-		margin-top : 10px;
+		margin-top : 7px;
 	}
  	</style>
 
@@ -31,26 +31,26 @@
 
 	</div>
 
-	<div class="col-xs-12 col-md-8 col-md-offset-2 h4 loginMdl">
+	<div class="col-xs-12 col-md-8 col-md-offset-2 h4 loginMdl" style="min-width:21cm">
 
 		<h2 class="text-center">Application Form</h2>
 		<br>
 		
 		<div class="col-xs-9">
-			<div class="row"><div class="col-xs-4">Name</div><div class="col-xs-7">: ${personalDetails.getName()}</div></div>
-			<div class="row"><div class="col-xs-4">Father's name</div><div class="col-xs-7">: ${personalDetails.getFatherName()}</div></div>
-			<div class="row"><div class="col-xs-4">Mother's name</div><div class="col-xs-7">: ${personalDetails.getMotherName()}</div></div>
-			<div class="row"><div class="col-xs-4">Gender</div><div class="col-xs-7">: ${personalDetails.getGender()}</div></div>
-			<div class="row"><div class="col-xs-4">Date-of-birth</div><div class="col-xs-7">: ${personalDetails.getDob()}</div></div>
-			<div class="row"><div class="col-xs-4">Age</div><div class="col-xs-7">: ${personalDetails.getAge()}</div></div>
-			<div class="row"><div class="col-xs-4">Physically Challenged</div><div class="col-xs-7">: ${personalDetails.getHandicap()}</div></div>
-			<div class="row"><div class="col-xs-4">Cast</div><div class="col-xs-7">: ${personalDetails.getStudentCast()}</div></div>
-			<div class="row"><div class="col-xs-4">Address Line 1</div><div class="col-xs-7">: ${personalDetails.getAdl1()}</div></div>
-			<div class="row"><div class="col-xs-4">Address Line 2</div><div class="col-xs-7">: ${personalDetails.getAdl2()}</div></div>
-			<div class="row"><div class="col-xs-4">Address Line 3</div><div class="col-xs-7">: ${personalDetails.getAdl3()}</div></div>
-			<div class="row"><div class="col-xs-4">Pin</div><div class="col-xs-7">: ${personalDetails.getPin()}</div></div>
-			<div class="row"><div class="col-xs-4">District</div><div class="col-xs-7">: ${personalDetails.getDistrict()}</div></div>
-			<div class="row"><div class="col-xs-4">State</div><div class="col-xs-7">: ${personalDetails.getState()}</div></div>
+			<div class="row"><div class="col-xs-5">Name</div><div class="col-xs-6">: ${personalDetails.getName()}</div></div>
+			<div class="row"><div class="col-xs-5">Father's name</div><div class="col-xs-6">: ${personalDetails.getFatherName()}</div></div>
+			<div class="row"><div class="col-xs-5">Mother's name</div><div class="col-xs-6">: ${personalDetails.getMotherName()}</div></div>
+			<div class="row"><div class="col-xs-5">Gender</div><div class="col-xs-6">: ${personalDetails.getGender()}</div></div>
+			<div class="row"><div class="col-xs-5">Date-of-birth</div><div class="col-xs-6">: ${personalDetails.getDob()}</div></div>
+			<div class="row"><div class="col-xs-5">Age</div><div class="col-xs-6">: ${personalDetails.getAge()}</div></div>
+			<div class="row"><div class="col-xs-5">Physically Challenged</div><div class="col-xs-6">: ${personalDetails.getHandicap()}</div></div>
+			<div class="row"><div class="col-xs-5">Cast</div><div class="col-xs-6">: ${personalDetails.getStudentCast()}</div></div>
+			<div class="row"><div class="col-xs-5">Address Line 1</div><div class="col-xs-6">: ${personalDetails.getAdl1()}</div></div>
+			<div class="row"><div class="col-xs-5">Address Line 2</div><div class="col-xs-6">: ${personalDetails.getAdl2()}</div></div>
+			<div class="row"><div class="col-xs-5">Address Line 3</div><div class="col-xs-6">: ${personalDetails.getAdl3()}</div></div>
+			<div class="row"><div class="col-xs-5">Pin</div><div class="col-xs-6">: ${personalDetails.getPin()}</div></div>
+			<div class="row"><div class="col-xs-5">District</div><div class="col-xs-6">: ${personalDetails.getDistrict()}</div></div>
+			<div class="row"><div class="col-xs-5">State</div><div class="col-xs-6">: ${personalDetails.getState()}</div></div>
 		</div>
 		
 		<div class="col-xs-2">		
