@@ -15,7 +15,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.onlineapplication.model.CourseDetails;
 import com.onlineapplication.mvc.bean.MultiFile;
 import com.onlineapplication.mvc.validator.MultiFileValidator;
 import com.onlineapplication.service.StudentService;
@@ -31,10 +33,20 @@ public class FileUploadController {
 	MultiFileValidator multifileValidator;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String fileUploadForm(ModelMap model) {
+	public ModelAndView fileUploadForm() {
+		
+		ModelAndView model = new ModelAndView();
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		CourseDetails courseDetails = studentService.fetchCourseDetails(email);
+		if(null != courseDetails  && courseDetails.pickedCourses() != ""){
+			model.setViewName("redirect:/dashboard/");
+			return model;
+		}
+			
 		MultiFile multiFile = new MultiFile();
-		model.addAttribute("multifile", multiFile);
-		return "fileupload";
+		model.addObject("multifile", multiFile);
+		model.setViewName("fileupload");
+		return model;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)

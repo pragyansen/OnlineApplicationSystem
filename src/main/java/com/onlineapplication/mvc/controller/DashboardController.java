@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.onlineapplication.constants.AppConstants;
 import com.onlineapplication.model.CourseDetails;
 import com.onlineapplication.model.EducationalDetails;
+import com.onlineapplication.model.FileDetails;
 import com.onlineapplication.model.PersonalDetails;
 import com.onlineapplication.model.Subject;
 import com.onlineapplication.mvc.bean.Course;
@@ -36,31 +37,21 @@ public class DashboardController {
 	@RequestMapping(value = "/", method=RequestMethod.GET)
 	public ModelAndView home() {
 		
-		ModelAndView mv = new ModelAndView(); 
-		String text = "You have not applied to any course(s) yet.";
-		String link = "";
-		
+		ModelAndView modelView = new ModelAndView(); 
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
-		CourseDetails courseDetails = new CourseDetails();
-		courseDetails = studentService.fetchCourseDetails(email);
+				
+		PersonalDetails personalBean = studentService.fetchPersonalDetails(email);
+		EducationalDetails educationalBean = studentService.fetchEducationalDetails(email);
+		byte[] files = studentService.fetchImageByType(email, "photo");
+		CourseDetails courses = studentService.fetchCourseDetails(email);
+				
+		modelView.addObject("educationalBean",educationalBean);
+		modelView.addObject("files",files);
+		modelView.addObject("courses",courses);
+		modelView.addObject("personalBean",personalBean);
 		
-		if(courseDetails != null)
-		{
-			text = courseDetails.pickedCourses();
-			if(text == "")
-				text = "You have not applied to any course(s) yet.";
-			else
-			{
-				text = "You have applied for the following course(s) : " + text;
-				link = "<a href=\"application-form\"><span style=\"color:blue\">View Application Form</span></a>";
-				mv.addObject("link",link);
-			}	
-		}
-		
-		mv.addObject("text",text);
-		mv.setViewName("dashboard");
-		
-		return mv;
+		modelView.setViewName("dashboard");
+		return modelView;
 	}
 		
 	
@@ -198,6 +189,11 @@ public class DashboardController {
 		CourseDetails courseDetails = studentService.fetchCourseDetails(email);
 		
 		ModelAndView modelAndView = new ModelAndView("application-form");
+		if(courseDetails == null)
+		{
+			modelAndView.setViewName("redirect:/dashboard/");
+			return modelAndView;
+		}
 		if(courseDetails != null)
 		{
 			
